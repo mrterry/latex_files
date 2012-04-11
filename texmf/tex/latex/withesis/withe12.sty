@@ -1,0 +1,533 @@
+% withe12.sty
+% LaTeX Style Option for University of Wisconsin Thesis Format
+% Adapted from the Purdue University Thesis Format
+% Originally by Dave Kraynie
+% Edits by Darrell McCauley
+% Adapted to UW-Madison format by Eric Benedict  (Noted with <EB>)
+\typeout{Style Option `mythe12' v1.0 <24 May 00>}
+
+
+% Some useful definitions!
+%   (inferred by context by EB, so they may be wrong... cavet emptor)
+% \z@ is the number zero
+% \p@ is pt
+%
+
+\newcommand{\@SL}[2]{\setlength{#1}{#2}}
+
+%=============================================================================
+% FONTS
+%=============================================================================
+\lineskip 1pt            % \lineskip is 1pt for all font sizes.
+\normallineskip 1pt
+\def\baselinestretch{1.5}
+
+%=============================================================================
+% These commands can be used in the thesis to switch between single
+% and double spacing.  This is needed, for instance, in the abstract.
+%=============================================================================
+\newcommand{\oneskip}{1.0}
+\newcommand{\twoskip}{1.5}
+\newcommand{\singlespace}
+  {\renewcommand{\baselinestretch}{\oneskip}\Large\normalsize}
+\newcommand{\doublespace}
+  {\renewcommand{\baselinestretch}{\twoskip}\Large\normalsize}
+
+%=============================================================================
+% Each size-changing command \SIZE executes the command
+%        \@setsize\SIZE{BASELINESKIP}\FONTSIZE\@FONTSIZE
+% where:
+%   BASELINESKIP = Normal value of \baselineskip for that size.  (Actual
+%                  value will be \baselinestretch * BASELINESKIP.)
+%
+%  \FONTSIZE     = Name of font-size command.  The currently available
+%                  (preloaded) font sizes are: \vpt (5pt), \vipt (6pt),
+%                  \viipt (etc.), \viiipt, \ixpt, \xpt, \xipt, \xiipt,
+%                  \xivpt, \xviipt, \xxpt, \xxvpt.
+%  \@FONTSIZE    = The same as the font-size command except with an
+%                  '@' in front---e.g., if \FONTSIZE = \xivpt then
+%                  \@FONTSIZE = \@xivpt.
+%
+%=============================================================================
+%\renewcommand{\@normalsize}{\@setsize\normalsize{14.5pt}\xiipt\@xiipt
+%\abovedisplayskip 12pt plus3pt minus7pt%
+%\belowdisplayskip \abovedisplayskip
+%\abovedisplayshortskip  \z@ plus3pt%
+%\belowdisplayshortskip  6.5pt plus3.5pt minus3pt}
+
+\renewcommand{\normalsize}{\fontsize{12pt}{14.5pt}\selectfont
+\abovedisplayskip 12pt plus3pt minus7pt%
+\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip  \z@ plus3pt%
+\belowdisplayshortskip  6.5pt plus3.5pt minus3pt}
+
+%\def\small{\@setsize\small{13.6pt}\xipt\@xipt
+%\abovedisplayskip 11pt plus3pt minus6pt%
+%\belowdisplayskip \abovedisplayskip
+%\abovedisplayshortskip  \z@ plus3pt%
+%\belowdisplayshortskip  6.5pt plus3.5pt minus3pt
+%\def\@listi{\parsep 4.5pt plus 2pt minus 1pt
+%            \itemsep \parsep
+%            \topsep 9pt plus 3pt minus 5pt}}
+
+\newcommand{\small}{\fontsize{11pt}{13.6pt}\selectfont
+\abovedisplayskip 11pt plus3pt minus6pt%
+\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip  \z@ plus3pt%
+\belowdisplayshortskip  6.5pt plus3.5pt minus3pt
+\def\@listi{\parsep 4.5pt plus 2pt minus 1pt
+            \itemsep \parsep
+            \topsep 9pt plus 3pt minus 5pt}}
+
+\newcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont
+\abovedisplayskip 10pt plus2pt minus5pt%
+\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip  \z@ plus3pt%
+\belowdisplayshortskip  6pt plus3pt minus3pt
+\def\@listi{\topsep 6pt plus 2pt minus 2pt\parsep 3pt plus 2pt minus 1pt
+\itemsep \parsep}}
+
+\newcommand{\scriptsize}{\fontsize{8pt}{9.5pt}\selectfont}
+\newcommand{\tiny}{\fontsize{6pt}{7pt}\selectfont}
+\newcommand{\large}{\fontsize{14pt}{18pt}\selectfont}
+\newcommand{\Large}{\fontsize{17pt}{22pt}\selectfont}
+\newcommand{\LARGE}{\fontsize{20pt}{25pt}\selectfont}
+\newcommand{\huge}{\fontsize{25pt}{30pt}\selectfont}
+\let\Huge=\huge
+
+\normalsize  % Choose the normalsize font.
+
+%=============================================================================
+% PAGE LAYOUT
+%=============================================================================
+% All margin dimensions measured from a point one inch from top and side
+% of page.
+%=============================================================================
+\setlength\voffset{0in}
+\setlength\hoffset{0in}
+
+
+%=============================================================================
+% SIDE MARGINS:
+%=============================================================================
+\if@twoside      % Values for two-sided printing:
+  \setlength\oddsidemargin{18bp}    %   Left margin on odd-numbered pages.
+  \setlength\evensidemargin{0bp}    %   Left margin on even-numbered pages.
+  \setlength\marginparwidth{68bp}   %   Width of marginal notes.
+\else            % Values for one-sided printing:
+  \if@msmargin           %  Values for MS thesis margins
+    \setlength\oddsidemargin{18bp}  %   Note that \oddsidemargin = \evensidemargin
+    \setlength\evensidemargin{18bp} % 1.25" left margin
+  \else                  %  Values for non-MS thesis margins (PhD, etc)
+    \setlength\oddsidemargin{0bp}   %   Note that \oddsidemargin = \evensidemargin
+    \setlength\evensidemargin{0bp}  % 1" left margin
+  \fi
+  \setlength\marginparwidth{68bp}
+\fi
+% units of these changed from pt to bp by EB
+
+%=============================================================================
+% VERTICAL SPACING:
+%=============================================================================
+                              % Top of page:
+\setlength\topmargin{0pt}      %    Nominal distance from top of page to top of
+                               %    box containing running head.  Relative to a
+                               %    automatic one inch margin.
+\setlength\headheight{12bp}    %    Height of box containing running head.
+\setlength\headsep{24bp}       %    Space between running head and text.
+\setlength\topskip{12bp}       %    '\baselineskip' for first line of page.
+                              % Bottom of page:
+\setlength\footskip{24bp}      %    Distance from baseline of box containing foot
+                               %    to baseline of last line of text.
+\newlength{\majorheadskip}
+\setlength{\majorheadskip}{60bp}  % Amount of vertical space to skip before a
+             % major heading (such as a chapter).
+             % Re-defined by the tableofcontents, etc.
+% units of these changed from pt to bp by mccauley
+% top margin changed to 1 in margin by EB
+%=============================================================================
+% DIMENSION OF TEXT:
+%=============================================================================
+\@SL{\textheight}{8.5in}     % Height of text (including footnotes and figures,
+                                      % excluding running head and foot).
+                                      % changed from 8.75 to 8.5in EB
+\addtolength{\textheight}{-\maxdepth} % to account for depth of font
+                         % see p. 63 of TeXbook -- mccauley
+\if@msmargin
+   \setlength{\textwidth}{6.25in}     % Width of text line, MS Thesis is narrower
+\else
+   \setlength{\textwidth}{6.5in}      % Width of text line. Changed from 6.0 by EB
+\fi
+                                    % For two-column mode:
+\setlength\columnsep{10pt}          %    Space between columns
+\setlength\columnseprule{0pt}       %    Width of rule between columns.
+
+%=============================================================================
+% A \raggedbottom command causes 'ragged bottom' pages: pages set to
+% natural height instead of being stretched to exactly \textheight.
+%=============================================================================
+
+%=============================================================================
+% FOOTNOTES:
+%=============================================================================
+\setlength{\footnotesep}{8.4pt}    % Height of strut placed at the beginning of every
+                                   % footnote = height of normal \footnotesize strut,
+                                   % so no extra space between footnotes.
+\skip\footins 10.8pt plus 4pt minus 2pt  % Space between last line of text and
+                                         % top of first footnote.
+
+%=============================================================================
+% FLOATS: (a float is something like a figure or table)
+%
+%  FOR FLOATS ON A TEXT PAGE:
+%
+%    ONE-COLUMN MODE OR SINGLE-COLUMN FLOATS IN TWO-COLUMN MODE:
+%=============================================================================
+\@SL{\floatsep}{14pt plus 2pt minus 4pt}  % Space between adjacent floats
+                                          % moved to top or bottom of text
+                                          % page.
+\@SL{\textfloatsep}{20pt plus 2pt minus 4pt}    % Space between main text
+                                                % and floats at top or
+                                                % bottom of page.
+\@SL{\intextsep}{14pt plus 4pt minus 4pt}      % Space between in-text
+                                               % figures and text.
+
+%=============================================================================
+%    TWO-COLUMN FLOATS IN TWO-COLUMN MODE:
+%=============================================================================
+\setlength{\dblfloatsep}{14pt plus 2pt minus 4pt}     % Same as \floatsep for
+                                                      % double-column figures
+                                                      % in two-column mode.
+\setlength{\dbltextfloatsep}{20pt plus 2pt minus 4pt} % \textfloatsep for double-
+                                                      % column floats.
+
+%=============================================================================
+%  FOR FLOATS ON A SEPARATE FLOAT PAGE OR COLUMN:
+%    ONE-COLUMN MODE OR SINGLE-COLUMN FLOATS IN TWO-COLUMN MODE:
+%=============================================================================
+\setlength\@fptop{0pt plus 1fil}  % Stretch at top of float page/column. (Must be
+                          % 0pt plus ...)
+\setlength\@fpsep{10pt plus 2fil}    % Space between floats on float page/column.
+\setlength\@fpbot{0pt plus 1fil}     % Stretch at bottom of float page/column. (Must be
+                          % 0pt plus ... )
+
+%=============================================================================
+%  DOUBLE-COLUMN FLOATS IN TWO-COLUMN MODE.
+%=============================================================================
+\setlength\@dblfptop{0pt plus 1fil}  % Stretch at top of float page. (Must be 0pt plus ?)
+\setlength\@dblfpsep{10pt plus 2fil} % Space between floats on float page.
+\setlength\@dblfpbot{0pt plus 1fil}  % Stretch at bottom of float page. (Must be
+                          % 0pt plus ... )
+%=============================================================================
+% MARGINAL NOTES:
+%=============================================================================
+\setlength{\marginparpush}{7pt}  % Minimum vertical separation between two
+                                 % marginal notes.
+
+%=============================================================================
+% PARAGRAPHING
+%=============================================================================
+\setlength{\parskip}{0pt plus 1pt} % Extra vertical space between paragraphs.
+\setlength{\parindent}{1.5em}      % Width of paragraph indentation.
+\setlength{\topsep}{10pt plus 4pt minus 6pt}    % Extra vertical space, in addition to
+                                   % \parskip, added above and below list and
+                                   % paragraphing environments.
+\setlength\partopsep{3pt plus 2pt minus 2pt}  % Extra vertical space, in addition to
+                                   % \parskip and \topsep, added when user
+                                   % leaves blank line before environment.
+\setlength\itemsep{5pt plus 2.5pt minus 1pt}  % Extra vertical space, in addition to
+                                   % \parskip, added between list items.
+
+%=============================================================================
+% The following page-breaking penalties are defined
+%=============================================================================
+\@lowpenalty   51      % Produced by \nopagebreak[1] or \nolinebreak[1]
+\@medpenalty  151      % Produced by \nopagebreak[2] or \nolinebreak[2]
+\@highpenalty 301      % Produced by \nopagebreak[3] or \nolinebreak[3]
+
+\@beginparpenalty -\@lowpenalty    % Before a list or paragraph environment.
+\@endparpenalty   -\@lowpenalty    % After a list or paragraph environment.
+\@itempenalty     -\@lowpenalty    % Between list items.
+
+%=============================================================================
+% \clubpenalty         % 'Club line'  at bottom of page.
+% \widowpenalty        % 'Widow line' at top of page.
+% \displaywidowpenalty % Math display widow line.
+% \predisplaypenalty   % Breaking before a math display.
+% \postdisplaypenalty  % Breaking after a math display.
+% \interlinepenalty    % Breaking at a line within a paragraph.
+% \brokenpenalty       % Breaking after a hyphenated line.
+%=============================================================================
+
+%=============================================================================
+% CHAPTERS AND SECTIONS
+%=============================================================================
+\newcommand\part{\cleardoublepage   % Starts new page.
+  \thispagestyle{plain}      % Page style of part page is 'plain'
+  \if@twocolumn              % IF two-column style
+    \onecolumn               %  THEN \onecolumn
+    \@tempswatrue            %       @tempswa := true
+  \else \@tempswafalse \fi   %  ELSE @tempswa := false
+  \hbox{}\vfil               % Add fil glue to center title
+  \bgroup  \centering        % BEGIN centering
+  \secdef\@part\@spart}
+
+\def\@part[#1]#2{
+  \ifnum \c@secnumdepth >-2\relax        % IF secnumdepth > -2
+    \refstepcounter{part}                %   THEN step part counter
+    \addcontentsline{toc}{part}{\thepart %        add toc line
+    \hspace{1em}#1}\else                 %   ELSE add unnumbered line
+    \addcontentsline{toc}{part}{#1}\fi   % FI
+  \markboth{}{}
+  \ifnum \c@secnumdepth >-2\relax        % IF secnumdepth > -2
+    \huge\bface Part \thepart            %   THEN Print 'Part' and number
+    \par                                 %         in \huge bold.
+    \vskip 20pt \fi                      %        Add space before title.
+  \Huge \bface                           % Print Title in \Huge bold.
+  #1\@endpart}
+
+\def\@spart#1{\Huge \bface #1\@endpart}  % Print title in \Huge boldface
+
+%=============================================================================
+% \@endpart finishes the part page
+%=============================================================================
+\def\@endpart{\par\egroup    % END centering
+  \vfil\newpage              % End page with 1fil glue.
+  \if@twoside                % IF twoside printing
+    \hbox{}                  %   THEN Produce totally blank page
+    \thispagestyle{empty}
+    \newpage
+  \fi                        % FI
+  \if@tempswa                % IF @tempswa = true
+    \twocolumn               %   THEN \twocolumn
+  \fi}                       % FI
+
+%=============================================================================
+% \@makechapterhead {TEXT} : Makes the heading for the \chapter command.
+%
+% Note: the \singlespace definition in this and the following command
+% has two functions.  It singlespaces multi-line chapter headings, and
+% it makes sure that the heading appears at the same place on the page
+% regardless of the mode in which the text is being set.  This latter
+% discovery was rather painful, and was due to an insight from Cal Ribbens.
+%=============================================================================
+\def\@makechapterhead#1{              % Heading for \chapter command
+  \vspace*{\majorheadskip}            % Space at top of text page.
+  { \parindent 0pt            % So centered chapter titles don't
+    \topsep 0pt                       % get extra space inserted above them.
+    \parskip 0pt
+    \singlespace\Large\bf         % Changed \bface to \bf EB
+ %   \begin{center}                    % set as centered paragraph
+ Chapter
+      \ifnum \c@secnumdepth >\m@ne    % IF secnumdepth > -1 THEN
+        \@chapnumber\ \
+      \fi
+      \\[1 em]
+      {#1}
+ %   \end{center}
+    \par\nobreak                      % TeX penalty to prevent page break.
+    \vskip 20pt}}                     % Space between title and text.
+
+%=============================================================================
+% \@makeschapterhead {TEXT} : Makes the heading for the \chapter* command.
+%=============================================================================
+\def\@makeschapterhead#1{             % Heading for \chapter command
+  \vspace*{\majorheadskip}            % Space at top of text page.
+  { \parindent 0pt            % So centered chapter titles don't
+    \topsep 0pt                       % get extra space inserted above them.
+    \parskip 0pt
+    \singlespace\Large\bf         % Changed \bface to \bf EB
+%    \centering{#1}                    % set as centered paragraph
+    {#1}
+    \par\nobreak                      % TeX penalty to prevent page break.
+    \vskip 20pt}}                     % Space between title and text.
+
+%=============================================================================
+% \@appendixchapterhead {TEXT}
+%=============================================================================
+\def\@appendixchapterhead#1{    % Chapter heading for \appendix command
+  \vspace*{\majorheadskip}      % Space at top of text page.
+  { \parindent 0pt      % So centered chapter titles don't
+    \topsep 0pt         % get extra space inserted above them.
+    \parskip 0pt
+    \singlespace\Large\bf         % Changed \bface to \bf EB
+    \centering{\@chapnumber \vskip 0pt {#1}}  % set as centered paragraph
+    \par\nobreak                % TeX penalty to prevent page break.
+    \vskip 20pt}}               % Space between title and text.
+
+%=============================================================================
+% \@appendiceschapterhead {TEXT}
+%=============================================================================
+\newlength{\@appendlen}
+\newlength{\@appendnumlen}
+\def\@appendiceschapterhead#1{  % Chapter heading for \appendix command
+  { \parindent 0pt
+    \singlespace\Large\bf         % Changed \bface to \bf EB
+    \setlength{\@appendlen}{\hsize}
+    \settowidth{\@appendnumlen}{\@chapnumber\ \ }
+    \addtolength{\@appendlen}{-\@appendnumlen}
+    \@chapnumber\ \ \parbox[t]{\@appendlen}{\noindent#1} % set title in parbox
+    \par\nobreak                % TeX penalty to prevent page break.
+    \vskip 20pt}}               % Space between title and text.
+
+%=============================================================================
+% \secdef{UNSTARCMDS}{STARCMDS} :
+%    When defining a \chapter or \section command without using
+%    \@startsection, you can use \secdef as follows:
+%       \def\chapter { ... \secdef \CMDA \CMDB }
+%       \def\CMDA    [#1]#2{ ...     % Command to define \chapter[...]{...}
+%       \def\CMDB    #1{ ...         % Command to define \chapter*{...}
+%=============================================================================
+
+%=============================================================================
+% Start chapter, folding heading to uppercase.
+% The last line uses \secdef (mentioned above) to decide whether this
+% is a chapter* or chapter command.
+%
+% \@chaptername is a function that must be defined by the chapter command.
+% It is provided as a hook to permit the chapter name to be modified
+% automatically if required by the style.  Currently it converts the chapter
+% name to uppercase.  - removed EB
+%=============================================================================
+%\def\@chaptername#1{\uppercase {#1}}
+\def\@chaptername#1{ {#1}}
+\def\@chapstyle{chapter}
+%\def\@chapnumber{\thechapter.}  % #.
+\def\@chapnumber{\thechapter}    % # removed the period, EB
+\let\@chapterhead\@makechapterhead
+\let\@schapterhead\@makeschapterhead
+
+\def\chapter{\clearpage        % Starts new page.
+   \global\@topnum\z@          % Prevents figures from going at top of page.
+   \@afterindenttrue           % \@afterindenttrue  => indent first line
+%  \@afterindentfalse          % \@afterindentfalse => don't indent first line
+   \secdef\@chapter\@schapter} % is this chapter* or chapter ?
+
+\def\@chapter[#1]#2{
+  \ifnum \c@secnumdepth >\m@ne
+    \refstepcounter{chapter}
+    \typeout{\@chapapp\space\thechapter. #2}
+    \addcontentsline{toc}{\@chapstyle}{\protect
+    \numberline{\@chapnumber}{\@chaptername{#1}}}
+  \else
+    \addcontentsline{toc}{\@chapstyle}{\@chaptername{#1}}
+  \fi
+  \chaptermark{#1}
+  \if@twocolumn          % Tests for two-column mode.
+    \@topnewpage[\@chapterhead{\@chaptername{#2}}]
+  \else \@chapterhead{\@chaptername{#2}}
+    \@afterheading \fi}  % Routine called after chapter and section heading.
+
+\def\@schapter#1{
+  \if@twocolumn
+    \@topnewpage[\@schapterhead{\@chaptername{#1}}]
+  \else \@schapterhead{\@chaptername{#1}}
+    \@afterheading\fi}
+
+%=============================================================================
+% \@startsection {NAME}{LEVEL}{INDENT}{BEFORESKIP}{AFTERSKIP}{STYLE}
+%            optional * [ALTHEADING]{HEADING}
+%    Generic command to start a section.
+%    NAME       : e.g., 'subsection'
+%    LEVEL      : a number, denoting depth of section -- e.g., chapter=1,
+%                 section = 2, etc.  A section number will be printed if
+%                 and only if LEVEL < or = the value of the secnumdepth
+%                 counter.
+%    INDENT     : Indentation of heading from left margin
+%    BEFORESKIP : Absolute value = skip to leave above the heading.
+%                 If negative, then paragraph indent of text following
+%                 heading is suppressed.
+%    AFTERSKIP  : if positive, then skip to leave below heading,
+%                       else - skip to leave to right of run-in heading.
+%    STYLE      : commands to set style
+%  If '*' missing, then increments the counter.  If it is present, then
+%  there should be no [ALTHEADING] argument.  A sectioning command
+%  is normally defined to \@startsection + its first six arguments.
+%
+% Changed \beforeskip to positive in section, subsection and subsubsection,
+% so first line of unit will be indented.
+%=============================================================================
+\def\section{\ifnum \c@section = 0   % if 1st section, add vspace to toc -dfk
+  \addtocontents{toc}{{\protect\ifnum \protect\value{tocdepth} > 0
+  {\vskip\@tocchapterskip} \protect\fi}} \fi
+  \@startsection {section}{1}{\z@}{3.5ex plus -1ex minus
+  -.2ex}{2.3ex plus .2ex}{\singlespace\large\bf}}
+\def\subsection{\@startsection{subsection}{2}{\z@}{3.25ex plus -1ex minus
+  -.2ex}{1.5ex plus .2ex}{\singlespace\large\bf}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}{3.25ex plus
+  -1ex minus -.2ex}{1.5ex plus .2ex}{\singlespace\large\bf}}
+\def\paragraph{\@startsection{paragraph}{4}{\z@}{3.25ex plus 1ex minus .2ex}
+  {-1em}{\singlespace\normalsize\bface}}
+\def\subparagraph{\@startsection{subparagraph}{4}{\parindent}
+  {3.25ex plus 1ex minus .2ex}{-1em}{\singlespace\normalsize\bface}}
+
+%=============================================================================
+% Default initializations of \...mark commands.  (See below for their
+% us in defining page styles.
+%=============================================================================
+\def\chaptermark#1{}
+% \def\sectionmark#1{}           % Preloaded definitions
+% \def\subsectionmark#1{}
+% \def\subsubsectionmark#1{}
+% \def\paragraphmark#1{}
+% \def\subparagraphmark#1{}
+
+%=============================================================================
+% The value of the counter secnumdepth gives the depth of the
+% highest-level sectioning command that is to produce section numbers.
+%=============================================================================
+\setcounter{secnumdepth}{3}
+
+%=============================================================================
+% LISTS
+%=============================================================================
+% The following commands are used to set the default values for the list
+% environment's parameters. See the LaTeX manual for an explanation of
+% the meanings of the parameters.  Defaults for the list environment are
+% set as follows.  First, \rightmargin, \listparindent and \itemindent
+% are set to 0pt.  Then, for a Kth level list, the command \@listK is
+% called, where 'K' denotes 'i', 'ii', ... , 'vi'.  (I.e., \@listiii is
+% called for a third-level list.)  By convention, \@listK should set
+% \leftmargin to \leftmarginK.
+%
+% For efficiency, level-one list's values are defined at top level, and
+% \@listi is defined to set only \leftmargin.
+%=============================================================================
+\setlength\leftmargini{2.5em}
+\setlength\leftmarginii{2.2em}     % > \labelsep + width of '(m)'
+\setlength\leftmarginiii{1.87em}   % > \labelsep + width of 'vii.'
+\setlength\leftmarginiv{1.7em}     % > \labelsep + width of 'M.'
+\setlength\leftmarginv{1em}
+\setlength\leftmarginvi{1em}
+
+\leftmargin\leftmargini
+\labelwidth\leftmargini\advance\labelwidth-\labelsep
+\setlength\labelsep{.5em}
+\setlength\parsep{5pt plus 2.5pt minus 1pt}
+
+\def\@listi{\leftmargin\leftmargini}
+
+\def\@listii{\leftmargin\leftmarginii
+  \labelwidth\leftmarginii\advance\labelwidth-\labelsep
+  \topsep 5pt plus 2.5pt minus 1pt
+  \parsep 2.5pt plus 1pt minus 1pt
+  \itemsep \parsep}
+
+\def\@listiii{\leftmargin\leftmarginiii
+  \labelwidth\leftmarginiii\advance\labelwidth-\labelsep
+  \topsep 2.5pt plus 1pt minus 1pt
+  \parsep \z@ \partopsep 1pt plus 0pt minus 1pt
+  \itemsep \topsep}
+
+\def\@listiv{\leftmargin\leftmarginiv
+  \labelwidth\leftmarginiv\advance\labelwidth-\labelsep}
+
+\def\@listv{\leftmargin\leftmarginv
+  \labelwidth\leftmarginv\advance\labelwidth-\labelsep}
+
+\def\@listvi{\leftmargin\leftmarginvi
+  \labelwidth\leftmarginvi\advance\labelwidth-\labelsep}
+
+%=============================================================================
+% END FILE
+%=============================================================================

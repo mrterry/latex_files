@@ -1,0 +1,286 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2010.3.19)  22 MAR 2010 15:13
+entering extended mode
+ %&-line parsing enabled.
+**natbib.dtx
+(./natbib.dtx
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+File: NATBIB.DTX 2009/11/07 8.31a (PWD, AO)
+
+LaTeX Warning: File `natbib.ins' already exists on the system.
+               Not generating it from this source.
+
+(/usr/share/texmf-texlive/tex/latex/base/ltxdoc.cls
+Document Class: ltxdoc 1999/08/08 v2.0u Standard LaTeX documentation class
+(/usr/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/base/doc.sty
+Package: doc 2006/02/02 v2.1d Standard LaTeX documentation package (FMi)
+\c@StandardModuleDepth=\count87
+\guard@level=\count88
+\MacrocodeTopsep=\skip43
+\MacroIndent=\dimen103
+\macro@cnt=\count89
+\MacroTopsep=\skip44
+\index@excludelist=\toks14
+
+(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
+Package: multicol 2006/05/18 v1.6g multicolumn formatting (FMi)
+\c@tracingmulticols=\count90
+\mult@box=\box26
+\multicol@leftmargin=\dimen104
+\c@unbalance=\count91
+\c@collectmore=\count92
+\doublecol@number=\count93
+\multicoltolerance=\count94
+\multicolpretolerance=\count95
+\full@width=\dimen105
+\page@free=\dimen106
+\premulticols=\dimen107
+\postmulticols=\dimen108
+\multicolsep=\skip45
+\multicolbaselineskip=\skip46
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count96
+\c@finalcolumnbadness=\count97
+\last@try=\dimen109
+\multicolovershoot=\dimen110
+\multicolundershoot=\dimen111
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+)
+\IndexMin=\dimen112
+\c@IndexColumns=\count98
+\GlossaryMin=\dimen113
+\c@GlossaryColumns=\count99
+\check@sum=\count100
+\bslash@cnt=\count101
+\wrong@table=\toks15
+\c@CodelineNo=\count102
+)) (./natbib.aux)
+\openout1 = `natbib.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+Package doc Info: Made | a short reference for \verb on input line 359.
+
+(./natbib.dtx
+File: natbib 2009/11/07 8.31a (PWD, AO)
+
+***************************
+* Character table correct *
+***************************
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 470.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 470.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 470.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 470.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 502.
+[1
+
+] (./natbib.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 27.
+)
+\tf@toc=\write3
+\openout3 = `natbib.toc'.
+
+ [2] [3]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 674.
+ [4]
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+Overfull \hbox (32.49924pt too wide) in paragraph at lines 726--736
+[][] 
+ []
+
+[5]
+Overfull \hbox (19.86061pt too wide) in paragraph at lines 761--767
+[][] 
+ []
+
+
+LaTeX Warning: Marginpar on page 6 moved.
+
+
+LaTeX Warning: Marginpar on page 6 moved.
+
+
+LaTeX Warning: Marginpar on page 6 moved.
+
+[6]
+Overfull \hbox (18.13826pt too wide) in paragraph at lines 838--848
+[][] 
+ []
+
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+
+Overfull \hbox (10.6102pt too wide) in paragraph at lines 884--886
+\OT1/cmr/m/n/10 There also ex-ists a com-mand []\OT1/cmtt/m/n/10 \citefullautho
+r \OT1/cmr/m/n/10 which is equiv-a-lent to []\OT1/cmtt/m/n/10 \citeauthor*\OT1/
+cmr/m/n/10 . 
+ []
+
+[7]
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 1045--1058
+
+ []
+
+[9]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1090
+.
+ (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1090.
+
+
+Overfull \hbox (8.77621pt too wide) in paragraph at lines 1117--1119
+[]\OT1/cmr/m/n/10 Example 1, []\OT1/cmtt/m/n/10 \setcitestyle{square,aysep={},y
+ysep={;}} \OT1/cmr/m/n/10 changes the author--
+ []
+
+[10]
+Overfull \hbox (19.52556pt too wide) in paragraph at lines 1124--1125
+[]\OT1/cmr/m/n/10 Example 2, []\OT1/cmtt/m/n/10 \setcitestyle{notesep={; },roun
+d,aysep={},yysep={;}} \OT1/cmr/m/n/10 changes
+ []
+
+[11]
+
+LaTeX Warning: Marginpar on page 12 moved.
+
+[12]
+Overfull \hbox (18.42963pt too wide) in paragraph at lines 1247--1253
+[]\OT1/cmtt/m/n/10 \setcitestyle\OT1/cmr/m/n/10 , []\OT1/cmtt/m/n/10 \bibpunct\
+OT1/cmr/m/n/10 , []\OT1/cmtt/m/n/10 \citestyle \OT1/cmr/m/n/10 com-mands or via
+ []\OT1/cmtt/m/n/10 \bibliographystyle{\OT1/cmr/m/it/10 bst[]\OT1/cmtt/m/n/10 }
+
+ []
+
+[13]
+
+LaTeX Warning: Marginpar on page 14 moved.
+
+[14] [15] [16] [17]
+Overfull \hbox (1.44449pt too wide) in paragraph at lines 1680--1683
+[]\OT1/cmr/m/n/10 There are cer-tain spe-cial `nu-mer-i-cal' styles, like that 
+of the stan-dard \OT1/cmtt/m/n/10 alpha.bst\OT1/cmr/m/n/10 ,
+ []
+
+[18]
+Overfull \hbox (5.97035pt too wide) in paragraph at lines 1746--1749
+[]\OT1/cmr/m/n/10 redefines []\OT1/cmtt/m/n/10 \thebibliography \OT1/cmr/m/n/10
+ to is-sue []\OT1/cmtt/m/n/10 \section* \OT1/cmr/m/n/10 in-stead of []\OT1/cmtt
+/m/n/10 \chapter*\OT1/cmr/m/n/10 ;
+ []
+
+[19]
+Overfull \hbox (5.30493pt too wide) in paragraph at lines 1767--1770
+[]\OT1/cmr/m/n/10 The pack-age op-tions are over-writ-ten by any ex-plicit []\O
+T1/cmtt/m/n/10 \setcitestyle\OT1/cmr/m/n/10 , []\OT1/cmtt/m/n/10 \bibpunct\OT1/
+cmr/m/n/10 ,
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1920.
+
+[20] [21] [22]
+No file natbib.ind.
+No file natbib.gls.
+) [23] (./natbib.aux) ) 
+Here is how much of TeX's memory you used:
+ 665 strings out of 95087
+ 7950 string characters out of 1183278
+ 58198 words of memory out of 1500000
+ 3877 multiletter control sequences out of 10000+50000
+ 11608 words of font info for 42 fonts, out of 1200000 for 2000
+ 29 hyphenation exceptions out of 8191
+ 30i,9n,21p,224b,342s stack positions out of 5000i,500n,6000p,200000b,5000s
+
+Output written on natbib.dvi (23 pages, 81392 bytes).

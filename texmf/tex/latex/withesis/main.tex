@@ -1,0 +1,131 @@
+% thesis.tex
+%
+% This file is root file for an example thesis written using the
+% University of Wisconsin-Madison LaTeX Style file.
+%
+% It is provided without warranty on an AS IS basis.
+
+
+%=====================================================================
+% Document Style
+%=====================================================================
+% Choose only one of the following document classes:
+%
+% for a 12 Point UW PhD Thesis without Margin Check
+\documentclass[12pt]{withesis}
+%
+% for a 10 Point UW PhD Thesis with Margin Check
+%\documentclass[10pt,margincheck]{withesis}
+%
+% The margincheck option flags lines which overflow their hbox with a black
+%  box at the end of the line.  This usually (but not always) indicates a
+%  margin violation on the right margin.  Left margin violations aren't
+%  indicated and if the margin violation is large enough, there isn't room
+%  for the black box to be visiable.  
+%
+% This option can be also used in conjunction with the msthesis option.
+%
+% or for a 12 Point UW Masters Thesis
+%\documentclass[12pt,msthesis]{withesis}
+%
+% or for a 10 Point UW Masters Thesis
+%\documentclass[10pt,msthesis]{withesis}
+%
+% The msthesis option changes the page margins from 1" all around
+% (the PhD format) to 1.25" left and 1" remaining margins (MS format).
+% The defaults for degree and thesis are changed to be MS and thesis.
+% These defaults can be overridden if the margins for the MS thesis
+% are desired for other documents.
+
+% To include optional packages, use the \usepackage command.
+%  The package epsfig is used to bring in the Encapsulated PostScript
+%    figures into the document.
+%  The package times is used to change the fonts to Times Roman; however
+%    because the times typewriter font looks odd, the original LaTeX
+%    Computer Modern font is kept for the typewriter font using
+%      \renewcommand{\ttdefault}{cmtt}
+%    Note that Times Roman is a PostScript font and therefore, the document
+%    cannot be correctly viewed from the *.dvi file.  It should be converted
+%    to a *.ps file first and then viewed with a PostScript previewer...
+\usepackage{epsfig}
+\usepackage{times}
+\renewcommand{\ttdefault}{cmtt}
+
+%========================================================================
+%  Draft Control Commands:
+%========================================================================
+%
+% \psdraft causes the \psfig or \epsfig commands to draw a box and label
+% the box with the postscript file name instead of reading in the full
+% postscript figure.  This can save time and toner when printing drafts.
+%
+%\psdraft
+%
+%
+% \psfull causes the inclusion of the postscript figures.
+%\psfull
+%
+%
+%\pagestyle{thesisdraft} causes the footer text to become:
+% DRAFT: Do Not Distribute        <time><Date>        <input file name>
+%
+%\pagestyle{thesisdraft}
+%
+%\pagestyle{thesis} causes the header and footers to be the correct format
+%
+\pagestyle{thesis}
+%
+%
+%  The page margins can be marked with a post-script box using the
+%  \draftmargins command.  This command uses dvips's end-of-page hook
+%  This is only visible in the *.ps file (NOT the *.dvi file)!
+%
+%\draftmargins
+%
+%
+%  The word ``DRAFT'' can be diagonally printed across the page using
+%  the \draftscreen command.  This command uses dvip's beginning-of-page
+%  hook.  This is only visible in the *.ps file (NOT the *.dvi file)!
+%
+%\draftscreen
+
+
+%=======================================================================
+% Remove the following lines if appendix tables or figures are present.
+% The suppress writing the auxiliary information which appears in the
+% list of tables or list of figures.
+%
+\noappendixtables                % Don't have appendix tables
+\noappendixfigures               % Don't have appendix figures
+
+
+%=======================================================================
+% End of Preamble, start of document
+%
+
+
+\begin{document}
+
+% Choose your bibliography style
+% plain is the basic style, others include ieeetr, siam, asm, etc
+\bibliographystyle{plain}
+
+
+\include{prelude}                % Title page, abstract, table of contents, etc
+\include{intro}                  % Chapter 1
+\include{essentials}             % Edited ``Essential LaTeX'' by Jon Warbrick
+\include{figs}                   % Chapter 3 Edited from UW Math Dept's Sample Thesis
+\include{bibs}                   % Chapter 4 From PU Thesis styles, by J.D. McCauley
+\include{usage}                  % Chapter 5 Strongly based on similar by J.D. McCauley
+
+\bibliography{refs}              % Make the bibliography
+
+\begin{appendices}               % Start of the Appendix Chapters.  If there is only
+                                 % one Appendix Chapter, then use \begin{appendix}
+\include{code}                   % Including computer code listings
+\include{bibref}                 % a BibTeX reference
+\include{math}                   % Complex Equations from the UW Math Department
+\include{acro}                   % A discussion on generating PDF files.
+\end{appendices}                 % End of the Appendix Chapters.  ibid on \end{appendix}
+%\include{vita}                  % Optional Vita, use \begin{vita} vita text \end{vita}
+\end{document}

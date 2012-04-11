@@ -1,0 +1,135 @@
+% bibs.tex
+%
+% This chapter briefly talks about BibTex and is mostly
+% copied from a similar chapter from "How to TeX a Thesis:
+% The Purdue Thesis Styles" by James Darrell McCauley and
+% Scott Hucker
+%
+
+\newcommand{\BibTeX}{{\sc Bib}\TeX}
+
+\chapter{Citations and Bibliographies}
+This chapter is an edited form of the same chapter from {\em How to 
+\TeX{} a Thesis: The Purdue Thesis Styles} by James Darrell McCauley and
+Scott Hucker.
+
+The task of compiling and formatting the sources cited in papers can
+be quite tedious, especially for large documents like theses.  A program
+separate from \LaTeX{}, called ``\BibTeX{},''can be used to automate this task~\cite{lamport}.
+
+\section{The Citation Command}
+When referring to the work of someone else, the {\tt \verb|\cite|} command is used.
+This generates the citation in the text for you.  In the above paragraph, the command
+{\tt \verb|\cite{lamport}|} was used after the word ``task.''  The formatting of your
+citation is handled by either the document style or a style option.  The default citation
+style uses the number system (a number in square brackets).  Other citation styles
+may use the author-date system, (Lamport, 1986) or the superscript$^3$ system.
+
+\section{Bibliography Styles}
+The way that a reference is formatted in your bibliography depends on the bibliography
+style, which is specified near the beginning of your document with the\break
+{\tt \verb|\bibliographstyle{file}|} command.  The file {\tt file.bst} is the name of the 
+bibliography style file.  Standard \BibTeX{} bibliography style files include {\tt plain},
+{\tt unsrt}, {\tt alpha}, and {\tt abbrev}.  The bibliography style governs whether or not
+references are sorted, whether first names or initials are used for authors, whether or 
+not last names are listed first, the location of the year in the references (after the
+author or at the end of the reference), {\em etc.}.  You may be required by your
+department or major professor to follow as style for a particular journal.  If so, then you
+will need to find a \BibTeX{} style file to suit your needs.  Most major journals have
+style files.  If you cannot locate an appropriate \BibTeX{} style file, then choose the
+one which is closest and then edit the {\tt .bbl} file by hand.  See Section~\ref{BBL}
+for a brief discussion on the {\tt .bbl} file.  Some common, but non-standard \BibTeX{}
+styles include
+\begin{tabbing}
+{\tt jacs-new.bstxxxx}\= {\em Journal of the American Chemical Society}\kill
+{\tt acm.bst}\>The Association for Computing Machinery\\
+{\tt ieeetr.bst}\> The {\em IEEE Transactions} style\\
+{\tt jacs-new.bst}\> {\em Journal of the American Chemical Society}
+\end{tabbing}
+
+\section{The Database}
+The  {\tt \verb|\bibliography{file}|} command is placed in your input file at the location
+where the ``List of References'' section\footnote{or ``Bibliography'' 
+if {\tt \char92 altbibtitle } has been specified in the preamble.} would be.  It specifies the name (or names) of
+your bibliographic data base, {\tt file.bib}.  An example entry in a \BibTeX{}
+database is:
+\begin{quote}\singlespace\tt\begin{verbatim}
+@book{ lamport86 ,
+     author =    "Leslie Lamport" ,
+     title =     "\LaTeX: A Document Preparation System" ,
+     publisher = "Addison--Wesley Pub.\ Co." ,
+     year =      "1986" ,
+     address =   "Reading, MA" 
+}
+\end{verbatim}\end{quote}
+
+The citation key is the first field in this entry--- citing this book in a \LaTeX{}
+file would look like
+\begin{quote}\singlespace\tt\begin{verbatim}
+According to Lamport~\cite{lamport86} ...
+\end{verbatim}\end{quote}
+The tilde ({\tt \verb|~|}) is used to tie the word ``Lamport'' to the citation
+generated.  The space between these words is then unbreakable---the word ``Lamport''
+and the citation \cite{lamport} will not be split across two lines if they happen to occur
+near the end of a line.
+
+A listing of all entry types with their required and optional fields is given in 
+Appendix~\ref{bibrefs}. There are several tools which exist to help in editing a \BibTeX{}
+file, however, their use is beyond the scope of this manual and can be found by searching
+the net.  You can simply use a plain text editor like {\tt vi} or {\tt WordPad} to edit
+and create the database files.
+
+There are several rules which you must follow when creating your database.  Authors are
+always listed by their full names, first name first, and multiple authors are separated
+by {\tt and}.  For example
+\begin{quote}\singlespace\tt\begin{verbatim}
+author = "John Jay Park and Frederick Gene Watson and
+          Michelle Catherine Smith",
+\end{verbatim}\end{quote}
+If you were using {\tt abbrv} as your {\tt bibliographystyle}, a reference for these
+authors may look like:
+\begin{quote}
+J.J. Park, F.G. Watson, and M.C. Smith \ldots
+\end{quote}
+
+Some styles only capitalize the first word of the title.  If you use any acronyms or
+other words that should always be capitalized in titles, then they should be 
+enclosed in {\tt \{\}}'s ({\em e.g.}, {\tt \{Fortran\}}, {\tt \{N\}ewton}).
+This protects the case of these characters.
+
+There are several other rules for \BibTeX{} listed in~\cite{lamport} which should be
+referred to because they are not discussed here.
+
+\section{Putting It All Together}
+\label{BBL}
+To aid the reader in understanding how all of this works together, the following 
+excerpt was taken from Lamport~\cite{lamport}:
+\begin{quotation}\singlespace
+When you ran \LaTeX{} with the input file {\tt sample.tex}, you may have
+noticed that \LaTeX{} created a file named {\tt sample.aux}.  This file,
+called an {\em auxiliary} file, contains cross-referencing information.  Since
+{\tt sample.tex} contains no cross-referencing commands, the auxiliary file it
+produces has no information.  However, suppose that \LaTeX{} is run with an
+input file named {\tt myfile.tex} that has citations and bibliography-making
+[or referencing] commands.  The auxiliary file {\tt myfile.aux} that it produces
+will contain all of the citation keys and the arguments of the {\tt \verb|\bibliography|}
+and {\tt\verb|\bibliographystyle|} commands.  When \BibTeX{} is run, it reads
+this information from the auxiliary file and produces a file named {\tt myfile.bbl}
+containing \LaTeX{} commands to produce the source list \ldots The next time
+\LaTeX{} is run on {\tt myfile.tex}, the {\tt \verb|\bibliography|} command reads
+the {\tt bbl} file ({\tt myfile.bbl}), which generates the source list.
+\end{quotation}
+
+Thus, the command sequence for a source file called {\tt main.tex} which is going to
+use \BibTeX{} would be:
+\begin{quote}\singlespace\tt\begin{verbatim}
+latex main.tex
+bibtex main
+latex main
+latex main
+\end{verbatim}\end{quote}
+The first \LaTeX{} is to collect all of the citations for \BibTeX{}.  Then
+\BibTeX{} is run to generate the bibliography.  \LaTeX{} is run again to
+incorporate the bibliography into the document and the run the last time to
+update any references (like pages in the Table of Contents) which changed when
+the bibliography was included.

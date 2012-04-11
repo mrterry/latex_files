@@ -1,0 +1,5 @@
+set the enviornment variable TEXMFLOCAL to the texmf directory
+
+export TEXMFLOCAL="$HOME/doc/latexdocs/texmf"
+
+run texhash on the texmf directory

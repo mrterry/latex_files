@@ -1,0 +1,150 @@
+\chapter{Figures and Tables}\label{quad}
+This chapter\footnote{Most of the text in this chapter's introduction is from {\em How to
+\TeX{} a Thesis: The Purdue Thesis Styles}} shows some example ways of incorporating tables and figures into \LaTeX{}.
+Special environments exist for tables and figures and are special because they are
+allowed to {\em float}---that is, \LaTeX{} doesn't always put them in the exact place
+that they occur in your input file.  An algorithm is used to place the floating environments,
+or floats, at locations which are typographically correct.  This may cause endless frustration
+if you want to have a figure or table occur at a specific location.  There are a few
+methods for solving this.
+
+You can exert some influence on \LaTeX{}'s float placement algorithm by using
+{\em float position specifiers}.  These specifiers, listed below, tell \LaTeX{}
+what you prefer.
+\begin{tabbing}
+{\tt hhhhhh} \= ``bottom'' \=  \kill
+{\tt h}\> ``here'' \> do not move this object \\
+{\tt p}\> ``page'' \> put this object on a page of floats \\
+{\tt b}\> ``bottom'' \> put this object at the bottom of a page\\
+{\tt t}\> ``top'' \> put this object at the top of a page\\
+\end{tabbing}
+
+Any combination of these can be used:
+\begin{quote}\tt\singlespace\begin{verbatim}
+\begin{figure}[htbp]
+ ...
+\caption{A Figure!}
+\end{figure}
+\end{verbatim}\end{quote}
+
+In this example, we asked \LaTeX{} to ``put the figure `here' if possible.  If it
+is not possible (according to the rule encoded in the float algorithm), put it on the
+next float page.  A float page is a page which contains nothing but floating objects,
+{\em e.g.} a page of nothing but figures or tables.  If this isn't possible, try to put it
+at the `top' of a page.  The last thing to try is to put the figure at the `bottom' of
+a page.''
+
+The remainder of this chapter deals with some examples of what to put into the figure,
+the ellipsis (\ldots ) in the example above.
+
+\section{Tables}
+Table~\ref{pde.tab1} is an example table from the UW Math Department.
+\begin{table}[htbp]
+\centering
+\caption{PDE solve times, $15^3+1$
+equations.\label{pde.tab1}}
+\begin{tabular}{||l|l|l|l|l|l||}\hline
+Precond. & Time & Nonlinear & Krylov
+& Function & Precond. \\
+ & & Iterations & Iterations & calls & solves \\ \hline
+None & 1260.9u & 3 & 26 & 30 & 0  \\
+ &(21:09) & & & &  \\ \hline
+FFT  & 983.4u & 2  & 5  & 8  & 7 \\
+&(16:31) & & & & \\ \hline
+\end{tabular}
+\end{table}
+The code to generate it is as follows:
+\begin{quote}\tt\singlespace\begin{verbatim}
+\begin{table}[htbp]
+\centering
+\caption{PDE solve times, $15^3+1$
+equations.\label{pde.tab1}}
+\begin{tabular}{||l|l|l|l|l|l||}\hline
+Precond. & Time & Nonlinear & Krylov
+& Function & Precond. \\
+ & & Iterations & Iterations & calls & solves \\ \hline
+None & 1260.9u & 3 & 26 & 30 & 0  \\
+ &(21:09) & & & &  \\ \hline
+FFT  & 983.4u & 2  & 5  & 8  & 7 \\
+&(16:31) & & & & \\ \hline
+\end{tabular}
+\end{table}
+\end{verbatim}\end{quote}
+
+\section{Figures}
+There are many different ways to incorporate figures into a \LaTeX{}
+document.  \LaTeX{} has an internal {\tt picture} environment and
+some programs will generate files which are in this format and can
+be simply {\tt include}d.  In addition to \LaTeX{} native {\tt picture}
+format, additional packages can be loaded in the {\tt\verb|\documentstyle|}
+command (or using the {\tt input} command) to allow \LaTeX{} to process
+non-native formats such as PostScript.
+
+\subsection{\tt gnuplot}
+The graph of Figure~\ref{gelfand.fig2}
+ was created by gnuplot. For simple graphs this is a
+ great utility.  For example, if you want a sin curve in your thesis
+ try the following:
+\begin{quote}\tt\singlespace\begin{verbatim}
+ (terminal window): gnuplot
+ (in gnuplot):
+                 set terminal latex
+                 set output "foo.tex"
+                 plot sin(x)
+                 quit
+\end{verbatim}\end{quote}
+This will generate a file called {\tt foo.tex} which can be read in
+with the following statements.
+\begin{figure}[htbp]
+\centering
+\input{fig2.tex}
+\caption{Gelfand equation on the ball, $3\leq n \leq 9$.
+\label{gelfand.fig2}}
+\end{figure}
+\begin{quote}\tt\singlespace\begin{verbatim}
+\begin{figure}[htbp]
+\centering
+\input{fig2.tex}
+\caption{Gelfand equation on the ball, $3\leq n \leq 9$.
+\label{gelfand.fig2}}
+\end{figure}
+\end{verbatim}\end{quote}
+One advantage to using the native \LaTeX{} {\tt picture} environment
+is that the fonts will be assured to agree and the pictures can be viewed
+in the {\tt .dvi} viewer.
+
+\subsection{PostScript}
+Many drawing applications now allow the export of a graphic to the
+{\em Encapsulated PostScript} format.  These files have a suffix of
+{\tt .EPS} or {\tt .EPSF} and are similar to a regular PostScript
+file except that they contain a {\em bounding box} which describes
+the dimensions of the figure.
+
+In order to include PostScript figures, the {\tt epsfig} (or {\tt psfig}
+depending on the system you are using) style file must be included in either
+the {\tt\verb|\documentstyle|} command or the preamble using the {\tt input} command.
+
+Figure~\ref{vwcontr} is a plot from Matlab.
+\begin{figure}[htbp]
+\centerline{
+\psfig{figure=vwcontr.eps,width=5in,angle=0}
+           }
+\caption{$\sigma$ as a Function of Voltage and Speed, $\alpha = 20$}
+\label{vwcontr}
+\end{figure}
+The commands to include this figure are
+\begin{quote}\tt\singlespace\begin{verbatim}
+\begin{figure}[htbp]
+\centerline{
+\psfig{figure=vwcontr.ps,width=5in,angle=0}
+           }
+\caption{$\sigma$ as a Function of Voltage and Speed, $\alpha = 20$}
+\label{vwcontr}
+\end{figure}
+\end{verbatim}\end{quote}
+
+Observe that the {\tt \verb|\psfig|} command allows the scaling of the figure
+by setting either the {\tt width} or {\tt height} of the figure.  If only one
+dimension is specified, the other is computed to keep the same aspect ratio.
+The figure can also be rotated by setting {\tt angle} to the desired value in
+degrees.

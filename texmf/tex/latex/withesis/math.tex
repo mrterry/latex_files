@@ -1,0 +1,237 @@
+\chapter{Mathematics Examples}
+This appendix provides an example of \LaTeX's typesetting
+capabilities.  Most of text was obtained from the University of
+Wisconsin-Madison Math Department's example thesis file.
+
+\section{Matrices}
+The equations for the {\em dq}-model of an induction machine in the
+synchronous reference frame are
+\begin{eqnarray}
+ \left[\begin{array}{c} v_{qs}^e\\v_{ds}^e\\v_{qr}^e\\v_{dr}^e  \end{array}\right]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+ &=& \left[ \begin{array}{cccc}
+ r_s + x_s\frac{\rho}{\omega_b} & \frac{\omega_e}{\omega_b}x_s & x_m\frac{\rho}{\omega_b} & \frac{\omega_e}{\omega_b}x_m \\
+ -\frac{\omega_e}{\omega_b}x_s & r_s + x_s\frac{\rho}{\omega_b} & -\frac{\omega_e}{\omega_b}x_m & x_m\frac{\rho}{\omega_b} \\
+ x_m\frac{\rho}{\omega_b} & \frac{\omega_e -\omega_r}{\omega_b}x_m & r_r'+x_r'\frac{\rho}{\omega_b} & \frac{\omega_e - \omega_r}{\omega_b}x_r' \\
+ -\frac{\omega_e -\omega_r}{\omega_b}x_m & x_m\frac{\rho}{\omega_b} & -\frac{\omega_e - \omega_r}{\omega_b}x_r' & r_r' + x_r'\frac{\rho}{\omega_b}
+ \end{array} \right]
+ \left[\begin{array}{c} i_{qs}^e\\i_{ds}^e\\i_{qr}^e\\i_{dr}^e\end{array} \right] \label{volteq}\\
+ T_e&=&\frac{3}{2}\frac{P}{2}\frac{x_m}{\omega_b}\left(i_{qs}^ei_{dr}^e - i_{ds}^ei_{qr}^e\right) \label{torqueeq}\\
+ T_e-T_l&=&\frac{2J\omega_b}{P}\frac{d}{dt}\left(\frac{\omega_r}{\omega_b}\right) \label{mecheq}.
+\end{eqnarray}
+
+\section{Multi-line Equations}
+
+\LaTeX{} has a built-in equation array feature, however the
+equation numbers must be on the same line as an equation.  For example:
+\begin{eqnarray}
+\Delta u + \lambda e^u &= 0&u\in \Omega,  \nonumber \\
+u&=0&u\in\partial\Omega.
+\end{eqnarray}
+
+Alternatively, the number can be centered in the equation using the
+following method.
+%
+% The equation-array feature in LaTeX is a bad idea.  For centered
+% numbers you should set your own equations and arrays as follows:
+%
+\def\dd{\displaystyle}
+\begin{equation}\label{gelfand}
+\begin{array}{rl}
+\dd \Delta u + \lambda e^u = 0, &
+\dd u\in \Omega,\\[8pt] % add 8pt extra vertical space. 1 line=23pt
+\dd u=0, & \dd u\in\partial\Omega.
+\end{array}
+\end{equation}
+The previous equation had a label.  It may be referenced as
+equation~(\ref{gelfand}).
+
+
+\section{More Complicated Equations}
+\section*{Rellich's identity}\label{rellich.section}
+\setcounter{theorem}{0}
+%
+%
+
+Standard developments of Pohozaev's identity used an identity by
+Rellich~\cite{rellich:der40}, reproduced here.
+
+\begin{lemma}[Rellich]
+Given $L$ in divergence form and $a,d$ defined above, $u\in C^2
+(\Omega )$, we have
+\begin{equation}\label{rellich}
+\int_{\Omega}(-Lu)\nabla u\cdot (x-\overline{x})\, dx
+= (1-\frac{n}{2}) \int_{\Omega} a(\nabla u,\nabla u) \, dx
+-
+\frac{1}{2} \int_{\Omega}
+d(\nabla u, \nabla u) \, dx
+\end{equation}
+$$
++
+\frac{1}{2} \int_{\partial\Omega} a(\nabla u,\nabla u)(x-\overline{x})
+\cdot \nu  \, dS
+-
+\int_{\partial\Omega}
+a(\nabla u,\nu )\nabla u\cdot (x-\overline{x}) \, dS.
+$$
+\end{lemma}
+{\bf Proof:}\\
+There is no loss in generality to take $\overline{x} = 0$. First
+rewrite $L$:
+$$Lu = \frac{1}{2}\left[ \sum_{i}\sum_{j}
+\frac{\partial}{\partial x_i}
+\left( a_{ij} \frac{\partial u}{\partial x_j} \right) +
+\sum_{i}\sum_{j}
+\frac{\partial}{\partial x_i}
+\left( a_{ij} \frac{\partial u}{\partial x_j} \right)
+\right]$$
+Switching the order of summation on the second term and relabeling
+subscripts, $j \rightarrow i$ and $i \rightarrow j$, then using the fact
+that $a_{ij}(x)$ is a symmetric matrix,
+gives the symmetric form needed to derive Rellich's identity.
+\begin{equation}
+Lu = \frac{1}{2} \sum_{i,j}\left[
+\frac{\partial}{\partial x_i}
+\left( a_{ij} \frac{\partial u}{\partial x_j} \right) +
+\frac{\partial}{\partial x_j}
+\left( a_{ij} \frac{\partial u}{\partial x_i} \right)
+\right].
+\end{equation}
+
+Multiplying $-Lu$ by $\frac{\partial u}{\partial x_k} x_k$ and integrating
+over $\Omega$, yields
+$$\int_{\Omega}(-Lu)\frac{\partial u}{\partial x_k} x_k \, dx=
+-\frac{1}{2} \int_{\Omega}
+\sum_{i,j}\left[
+\frac{\partial}{\partial x_i}
+\left( a_{ij} \frac{\partial u}{\partial x_j} \right) +
+\frac{\partial}{\partial x_j}
+\left( a_{ij} \frac{\partial u}{\partial x_i} \right)
+\right]
+\frac{\partial u}{\partial x_k} x_k \, dx$$
+Integrating by parts (for integral theorems see~\cite[p. 20]
+{zeidler:nfa88IIa})
+gives
+$$= \frac{1}{2} \int_{\Omega}
+\sum_{i,j} a_{ij} \left[
+\frac{\partial u}{\partial x_j}
+\frac{\partial^2 u}{\partial x_k\partial x_i} +
+\frac{\partial u}{\partial x_i}
+\frac{\partial^2 u}{\partial x_k\partial x_j}
+\right] x_k \, dx
+$$
+$$
++
+\frac{1}{2} \int_{\Omega}
+\sum_{i,j} a_{ij} \left[
+\frac{\partial u}{\partial x_j} \delta_{ik} +
+\frac{\partial u}{\partial x_i} \delta_{jk}
+\right] \frac{\partial u}{\partial x_k} \, dx
+$$
+$$- \frac{1}{2} \int_{\partial\Omega}
+\sum_{i,j} a_{ij} \left[
+\frac{\partial u}{\partial x_j} \nu_{i} +
+\frac{\partial u}{\partial x_i} \nu_{j}
+\right] \frac{\partial u}{\partial x_k} x_k \, dx
+$$
+= $I_1 + I_2 + I_3$, where the unit normal vector is $\nu$.
+One may rewrite $I_1$ as
+$$I_1 = \frac{1}{2} \int_{\Omega}
+\sum_{i,j} a_{ij} \frac{\partial}{\partial x_k}\left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) x_k \, dx
+$$
+Integrating the first term by parts again yields
+$$I_1 = -\frac{1}{2} \int_{\Omega}
+\sum_{i,j} a_{ij} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) \, dx
++
+\frac{1}{2} \int_{\partial\Omega}
+\sum_{i,j} a_{ij} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) x_k \nu_k \, dS
+$$
+$$
+-
+\frac{1}{2} \int_{\Omega}
+\sum_{i,j} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) x_k \frac{\partial a_{ij}}{\partial x_k}\, dx.
+$$
+Summing over $k$ gives
+$$\int_{\Omega}(-Lu)(\nabla u\cdot x)\, dx =
+-\frac{n}{2} \int_{\Omega}
+\sum_{i,j} a_{ij} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) \, dx
+$$
+$$
++
+\frac{1}{2} \int_{\partial\Omega}
+\sum_{i,j} a_{ij} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) (x\cdot \nu ) \, dS
+-
+\frac{1}{2} \int_{\Omega}
+\sum_{i,j} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) (x\cdot  \nabla a_{ij}) \, dx
+$$
+$$
++
+\frac{1}{2} \int_{\Omega}
+\sum_{i,j,k} a_{ij} \left[
+\frac{\partial u}{\partial x_j}
+\frac{\partial u}{\partial x_k} \delta_{ik} +
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_k} \delta_{jk}
+\right] \, dx
+$$
+$$- \frac{1}{2} \int_{\partial\Omega}
+\sum_{i,j} a_{ij} \left[
+\frac{\partial u}{\partial x_j} \nu_{i} +
+\frac{\partial u}{\partial x_i} \nu_{j}
+\right] (\nabla u\cdot x) \, dS.
+$$
+Combining the first and fourth term on the right-hand side
+simplifies the expression
+$$\int_{\Omega}(-Lu)(\nabla u\cdot x)\, dx
+=
+(1-\frac{n}{2}) \int_{\Omega}
+\sum_{i,j} a_{ij} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) \, dx
+$$
+$$
++
+\frac{1}{2} \int_{\partial\Omega}
+\sum_{i,j} a_{ij} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) (x\cdot \nu ) \, dS
+-
+\frac{1}{2} \int_{\Omega}
+\sum_{i,j} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) (x\cdot  \nabla a_{ij}) \, dx
+$$
+$$
+-
+\frac{1}{2} \int_{\partial\Omega}
+\sum_{i,j} a_{ij} \left[
+\frac{\partial u}{\partial x_j} \nu_{i} +
+\frac{\partial u}{\partial x_i} \nu_{j}
+\right] (\nabla u\cdot x) \, dS.
+$$
+Using the notation defined above, the result follows.
+
+

@@ -1,0 +1,34 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Using this Package}{4}
+\contentsline {subsection}{\numberline {2.1}New Bibliography Styles}{4}
+\contentsline {subsection}{\numberline {2.2}The Syntax of the \texttt {thebibliography}}{4}
+\contentsline {subsection}{\numberline {2.3}Basic Citation Commands}{5}
+\contentsline {subsection}{\numberline {2.4}Extended Citation Commands}{6}
+\contentsline {subsection}{\numberline {2.5}Forcing Upper Cased Name}{8}
+\contentsline {subsection}{\numberline {2.6}Citation Aliasing}{8}
+\contentsline {subsection}{\numberline {2.7}Authorless and Yearless References}{9}
+\contentsline {subsection}{\numberline {2.8}Extra Features in the \texttt {plainnat} Family}{9}
+\contentsline {subsection}{\numberline {2.9}Selecting Citation Punctuation}{10}
+\contentsline {subsection}{\numberline {2.10}Predefining a citation style}{12}
+\contentsline {subsection}{\numberline {2.11}Priority of Style Commands}{13}
+\contentsline {subsection}{\numberline {2.12}Other Formatting Options}{13}
+\contentsline {subsection}{\numberline {2.13}Automatic Indexing of Citations}{14}
+\contentsline {subsection}{\numberline {2.14}HyperT\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m \ Compatibility}{14}
+\contentsline {subsection}{\numberline {2.15}Multiple Bibliographies in One Document}{15}
+\contentsline {subsubsection}{\numberline {2.15.1}Special Considerations for \texttt {natbib}\ and \texttt {chapterbib}}{15}
+\contentsline {subsection}{\numberline {2.16}Sorting and Compressing Numerical Citations}{16}
+\contentsline {subsection}{\numberline {2.17}Merged Numerical References}{16}
+\contentsline {subsection}{\numberline {2.18}Long Author List on First Citation}{17}
+\contentsline {section}{\numberline {3}Numerical Citations with Author--Year Styles}{18}
+\contentsline {subsection}{\numberline {3.1}Selecting Numerical Mode}{18}
+\contentsline {section}{\numberline {4}Local Configuration}{18}
+\contentsline {section}{\numberline {5}Package Options}{19}
+\contentsline {section}{\numberline {6}Reference Sheet}{20}
+\contentsline {section}{\numberline {7}Options with \texttt {docstrip}}{20}
+\contentsline {section}{\numberline {8}Other Author--Year Solutions}{21}
+\contentsline {subsection}{\numberline {8.1}The \texttt {natsci.bst} Style}{21}
+\contentsline {subsection}{\numberline {8.2}The \texttt {apalike.bst} Style}{21}
+\contentsline {subsection}{\numberline {8.3}The \texttt {newapa} Style}{22}
+\contentsline {subsection}{\numberline {8.4}The Harvard Family}{22}
+\contentsline {subsection}{\numberline {8.5}The Astronomy Style}{23}
+\contentsline {subsection}{\numberline {8.6}The \texttt {authordate} Style}{23}

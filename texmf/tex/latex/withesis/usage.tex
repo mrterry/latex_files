@@ -1,0 +1,377 @@
+% usage.tex
+%
+% This file explains how to use the withesis style
+%   it is heavily modelled after a similar chapter by McCauley
+%   for the Purdue Thesis style
+%
+% Eric Benedict, May 2000
+%
+% It is provided without warranty on an AS IS basis.
+
+
+\chapter{Using the {\tt withesis} Style}
+
+You can get a copy of the \LaTeX{} style for creating a University
+of Wisconsin--Madison thesis or dissertation from:
+
+{\tt http://www.cae.wisc.edu/\verb+~+benedict/LaTeX.html}
+
+After somehow unpacking it, you will have the style files ({\tt withesis.sty}
+{\tt withe10.sty}, and {\tt withe12.sty}) as well the files used to create
+this document.  The files used for this document can be copied and used as a
+template for your own thesis or dissertation.
+
+The final printed form of this document is useful, but the
+combination of the source code and final copy form a much more valuable
+reference.  Keeping a working copy of the this document can be helpful
+when you are later working on your thesis or disseration and want to know
+how to do something.  If you find a similar example in this document,
+then you can simply look at the corresponding source code and add it to
+your document.    Because many parts of this document were written by
+different people, the styles and techniques are also different and provide
+different ways of achieving the same or similar results.
+
+Because of the typical size of theses, it makes sense to break the document
+up into several smaller files.  Usually this is done at the chapter level.
+These files can then be {\tt \verb|\include|}d in a {\em root} file.  It is
+the {\em root} file that you will run \LaTeX{} on.  For this manual, the
+root file is called {\tt main.tex}.
+
+\section{The Root File and the Preamble}
+The {\tt \verb|\documentclass|} command is used to tell \LaTeX{} that you will
+be using the {\tt withesis} document class and it is the first command in your
+root file.  Class options such as {\tt 10pt}, {\tt 12pt}, {\tt msthesis} or
+{\tt margincheck} are specified here:
+
+{\tt \verb|\documentclass[12pt,msthesis]{withesis}|}
+
+The class option {\tt msthesis} sets the margins to be appropriate for depositing
+with the UW library, namely a 1.25 inch left margin with the remaining margins 1 inch.
+The defaults for the title page are also defined for a thesis and for a Master of
+Science degree.
+
+The class option {\tt margincheck} will place a small black square at the end of
+each line which exceeds the margins.\footnote{In reality, the square is
+placed at the end of lines which exceed their {\tt \char92hbox}.  This usually
+(but not always) indicates a  margin violation on the right margin.  Left
+margin violations aren't indicated and if the margin violation is large enough,
+there isn't room for the black box to be visiable.}  This is visible both in the {\tt .dvi} file
+as well as in the {\tt .ps} file.
+
+The area immediately following this command is called the {\em preamble} and is
+used for things like including different style packages,
+defining new macros and declaring the page style.
+
+The style packages can be used to easily change the thesis font.  For example,
+this document is set in Times Roman instead of the \LaTeX default of Computer
+Modern.  This change was performed by including the {\tt times} package:
+
+{\tt\verb|\usepackage{times}|}\footnote{In this document, the typewriter font
+{\tt $\backslash$tt} was redefined to use the Computer Modern font with the command
+{\tt $\backslash$renewcommand\{$\backslash$ttdefault\}\{cmtt\}}.  
+For more information, see~\cite{goossens}.}
+
+Remember that if you change the fonts from the default Computer Modern to
+PostScript ({\em e.g.} Times Roman) then in order to correctly see the
+document, you will need to convert the {\tt *.dvi} output into a {\tt *.ps}
+file and view the document with a PostScript viewer. This is required since 
+most {\tt *.dvi} previewer programs cannot 
+display PostScript fonts.  Usually, the previewer will substitute
+default fonts so the document may be viewed; however, since the alternate
+fonts may not be the same size, the formatting of the document may appear
+to be incorrect.
+
+The style package for including Postscript figures, {\tt epsfig}, is included with
+
+{\tt\verb|\usepackage{epsfig}|}
+
+If multiple style packages are required, then they can be combined into one statement
+as follows:
+
+{\tt\verb|\usepackage{epsfig,times}|}
+
+Many different style packages are available.  For more information, see~\cite{goossens}.
+
+The page styles are defined using a similar method.
+A special style is defined for the {\tt withesis} style:
+
+{\tt\verb|\pagestyle{thesisdraft}|}
+
+This style causes the footer text to become:
+
+{\verb| DRAFT: Do Not Distribute        <time><Date>        <input file name>|}
+
+This appears at the bottom of every page.
+
+In addition to the page style command, the {\tt withesis} has defined several useful
+commands which are specified in the preamble.  They include {\tt \verb| \draftmargin|},
+{\tt \verb|\draftscreen|}, {\tt \verb|\noappendixtables|}, and
+{\tt \verb|\noappendixfigures|}.
+
+The command  {\tt \verb|\draftmargin|} draws a PostScript box with the dimensions of
+the margins.  This makes it easy to check that the margins are correct and to see if
+any of the text or figures are outside of the required margins.  This box is only visible
+in the {\tt .ps} file since it is a PostScript special.
+
+
+The command  {\tt \verb|\draftscreen|} draws a PostScript screen with the word {\em DRAFT}
+in light grey and diagonally across the page.  This screen is only visible
+in the {\tt .ps} file since it is a PostScript special.
+
+The commands {\tt \verb|\noappendixtables|} and/or {\tt \verb|\noappendixfigures|} should
+be used if the appendix does not have either tables or figures respectively.  These commands
+inhibit the Appendix Table or Appendix Figure titles in the List of Tables or List of
+Figures.\label{usage:noapp}
+
+
+If you have specified the {\tt psfig} or {\tt epsfig} document style package, then a useful
+command is {\tt \verb|\psdraft|}.  This command will show the bounding box that the figure
+would occupy (instead of actually including the figure).  This speeds up the draft copy
+printing, reduces toner usage and the drawn box is visible in the {\tt .dvi} file.
+
+The next usual command is {\tt \verb|\begin{document}|}.  The following example is part
+of the root file used for this manual.
+
+\begin{quote} \singlespace\footnotesize\tt
+\begin{verbatim}
+\bibliographystyle{plain}
+\include{prelude}        % Title page, abstract, table of contents, etc
+\include{intro}          % Chapter 1
+\include{essentials}     % Edited ``Essential LaTeX'' by Jon Warbrick
+\include{figs}           % Chapter 3 Edited from UW Math Dept's Sample Thesis
+\include{bibs}           % Chapter 4 From PU Thesis styles, by J.D. McCauley
+\include{usage}          % Chapter 5 Strongly based on similar by J.D. McCauley
+\bibliography{refs}      % Make the bibliography
+\begin{appendices}       % Start of the Appendix Chapters.  If there is only
+                         % one Appendix Chapter, then use \begin{appendix}
+\include{code}         % Including computer code listings
+\include{bibref}         % a BibTeX reference
+\include{math}           % Complex Equations from the UW Math Department
+\include{acro}           % A discussion on generating PDF files.
+\end{appendices}         % End of the Appendix Chapters.  ibid on \end{appendix}
+%\include{vita}          % Optional Vita, use \begin{vita} vita text \end{vita}
+\end{document}
+\end{verbatim}
+\end{quote}
+
+\section{Prelude}
+After the {\tt \verb|\begin{document}|} comes the preliminary information found in
+theses.  In this manual, the information is kept in the file {\tt prelude.tex} (see
+above).  These pages will need to be numbered with roman numerals, so use
+\begin{quote}\tt\singlespace\begin{verbatim}
+\clearpage\pagenumbering{roman}
+\end{verbatim}\end{quote}
+
+Next, comes your thesis or dissertation title, your name, date of graduation, department
+and degree.
+\begin{quote}\tt\singlespace\begin{verbatim}
+\title{How to \LaTeX\ a Thesis}
+\author{Eric R. Benedict}
+\date{2000}
+%   - The default degree is ``Doctor of Philosophy''
+%     Degree can be changed using the command \degree{}
+%\degree{New Degree}
+%   - for a PhD dissertation (default), specify \dissertation
+%\dissertation
+%   - for a masters project report, specify \project
+%\project
+%   - for a preliminary report, specify \prelim
+%\prelim
+%   - for a masters thesis, specify \thesis
+%\thesis
+%   - The default department is ``Electrical Engineering''
+%     The department can be changed using the command \department{}
+%\department{New Department}
+\end{verbatim}\end{quote}
+
+If you specified the class option {\tt msthesis}, then the degree is changed to
+{\em Master \break of Science} and the {\tt \verb|\thesis|} option is specified.  If you
+want to have the masters margins with another document, then the {\tt \verb|\degree|}
+and {\tt \verb|\dissertation|},  {\tt \verb|\project|}, {\em etc.\/} can be specified
+as needed.
+
+Once the
+above are all defined, use  {\tt \verb|\maketitle|} to generate the title page.
+\begin{quote}\tt\singlespace\begin{verbatim}
+\maketitle
+\end{verbatim}\end{quote}
+
+If you wish to include a copyright page (see Section~\ref{copyright} for
+information on registering the copyright.), then add the command
+\begin{quote}\tt\singlespace\begin{verbatim}
+\copyrightpage
+\end{verbatim}\end{quote}
+This will generate the proper copyright page and will use the name and date specified
+in {\tt \verb|\author{}|} and {\tt \verb|\date{}|}.
+
+Next are the dedications and acknowledgements:
+\begin{quote}\tt\singlespace\begin{verbatim}
+\begin{dedication}
+To my pet rock, Skippy.
+\end{dedication}
+
+\begin{acknowledgments}
+I thank the many people who have done lots of nice things for me.
+\end{acknowledgments}
+\end{verbatim}\end{quote}
+
+You must tell \LaTeX{} to generate a table of contents, a list of tables and a list of
+figures:
+\begin{quote}\tt\singlespace\begin{verbatim}
+\tableofcontents
+\listoftables
+\listoffigures
+\end{verbatim}\end{quote}
+
+If you wish to have a nomenclature, list of symbols or glossary it can go here.
+\begin{quote}\tt\singlespace\begin{verbatim}
+\begin{nomenclature}
+%\begin{listofsymbols}
+%\begin{glossary}
+\begin{tabular}{ll}
+$C_1$ & Constant 1\\
+\ldots
+\end{tabular}
+%\end{glossary}
+%\end{listofsymbols}
+\end{nomenclature}
+\end{verbatim}\end{quote}
+
+If your abstract will be microfilmed by Bell and Howell (formerly UMI), then you
+will need to generate an abstract of less than 350 words.  This abstract can be created
+using the {\tt umiabstract} environment.  This environment requires that you define your
+advisor and your advisor's title using {\tt \verb|\advisorname{}|} and
+{\tt \verb|\advisortitle{}|}.
+\begin{quote}\tt\singlespace\begin{verbatim}
+\advisorname{Bucky J. Badger}
+\advisortitle{Assistant Professor}
+% ABSTRACT
+\begin{umiabstract}
+\noindent       % Don't indent first paragraph.
+This explains the basics for using \LaTeX\ to typeset a
+dissertation, thesis or project report for the University of
+Wisconsin-Madison.
+
+...
+
+\end{umiabstract}
+\end{verbatim}\end{quote}
+This will place your name, title and required text at the top of the page and follow the
+abstract text with your advisor's name at the bottom for your advisor's signature.  This
+page is not numbered and would be submitted separately.
+
+If you will have an abstract as part of your document, then the {\tt abstract} environment
+should be used.
+\begin{quote}\tt\singlespace\begin{verbatim}
+\begin{abstract}
+\noindent       % Don't indent first paragraph.
+This explains the basics for using \LaTeX\ to typeset a
+dissertation, thesis or project report for the University of
+Wisconsin-Madison.
+
+...
+
+\end{abstract}
+\end{verbatim}\end{quote}
+This will generate a page number and it will be included in the Table
+of Contents.  
+
+If you will have both the UMI and regular abstracts like this document, then
+you will probably want to write the abstract once and save it in a seperate
+file such as {\tt abstract.tex}.  Then, you can use the same abstract for
+both purposes.
+
+\begin{quote}\begin{verbatim}
+\begin{umiabstract}
+  \input{abstract}
+\end{umiabstract}
+
+\begin{abstract}
+  \input{abstract}
+\end{abstract}
+\end{verbatim}\end{quote}
+
+Finally, the page numbers must be changed to arabic numbers to conclude the preliminary
+portion of the document.
+\begin{quote}\tt\singlespace\begin{verbatim}
+\clearpage\pagenumbering{arabic}
+\end{verbatim}\end{quote}
+
+\section{The Body}
+At the beginning of {\tt intro.tex} there is the following command:
+\begin{quote}\tt\singlespace\begin{verbatim}
+\chapter{Introducing the {\tt withesis} \LaTeX{} Style Guide}
+\end{verbatim}\end{quote}
+Following that is the text of the chapter.  The body of your thesis is separated by
+sectioning commands like {\tt \verb|\chapter{}|}.  For more information on the sectioning
+commands, see Section~\ref{ess:sectioning}.
+
+Remember the basic rule of outlining you learned in grammar school:
+\begin{quote}
+You cannot have an `A' if you do not have a `B'
+\end{quote}
+Take care to have at least two {\tt \verb|\section|}s if you use the command; have
+two {\tt \verb|\subsection|}s, {\em etc}.
+
+
+
+\section{Additional Theorem Like Environments}
+The {\tt withesis} style adds numerous additional theorem like environments.  These
+environments were included to allow compatibility with the University of Wisconsin's
+Math Department's style file.  These environments are
+{\tt theorem}, {\tt assertion}, {\tt claim}, {\tt conjecture}, {\tt corollary},
+{\tt definition}, {\tt example}, {\tt figger}, {\tt lemma}, {\tt prop} and {\tt remark}.
+
+As an example, consider the following.
+\begin{lemma}
+Assuming that $\partial\Omega_2 = \emptyset$ and that $h(t) = 1$, we
+have $$
+\begin{array}{lr}
+\Delta u = f, &  x\in\Omega ,\\[2pt]
+u =  g_1, &  x\in\partial\Omega .
+\end{array}
+$$
+\end{lemma}
+which was produced with the following:
+\begin{quote}\tt\singlespace\begin{verbatim}
+\begin{lemma}
+Assuming that $\partial\Omega_2 = \emptyset$ and that $h(t) = 1$, we
+have $$
+\begin{array}{lr}
+\Delta u = f, &  x\in\Omega ,\\[2pt]
+ u =  g_1, &  x\in\partial\Omega .
+\end{array}
+$$
+\end{lemma}
+\end{verbatim}\end{quote}
+
+\section{Bibliography or References}
+As a final note, the default title for the references chapter is ``LIST OF REFERENCES.''
+Since some people may prefer ``BIBLIOGRAPHY'', the command
+\break{\tt \verb|\altbibtitle|}
+has been added to change the chapter title.
+
+\section{Appendices}
+There are two commands which are available to suppress the writing of the auxiliary information
+(to the {\tt .lot} and {\tt .lof} files).  They are:
+\begin{quote}\tt\singlespace\begin{verbatim}
+\noappendixtables                % Don't have appendix tables
+\noappendixfigures               % Don't have appendix figures
+\end{verbatim}\end{quote}
+These commands should be in the preamble.  See Section~\ref{usage:noapp}.
+
+There are two environments for doing the appendix chapter: {\tt appendix} and
+\break {\tt appendices}.  If you have only one chapter in the appendix, use the {\tt appendix}
+environment.  If you have more than one chapter, like this manual, use the
+{\tt appendices} environment.
+\begin{quote}\tt\singlespace\footnotesize\begin{verbatim}
+\begin{appendices}  % Start of the Appendix Chapters.  If there is only
+                    % one Appendix Chapter, then use \begin{appendix}
+\include{code}      % Including computer code listings
+\include{bibref}    % a BibTeX reference
+\include{math}      % Complex Equations from the UW Math Department
+
+\end{appendices}    % End of the Appendix Chapters. ibid on \end{appendix}
+\end{verbatim}\end{quote}
+The difference between these two environments is the way that the chapter header is
+created and how this is listed in the table of contents.

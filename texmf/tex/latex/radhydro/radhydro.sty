@@ -1,0 +1,157 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% The Radhydro Group LaTeX Style %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Originally Written By: Milad Fatenejad, 
+%                        November 16th 2006
+%
+% This package is used by the radhydro group at the University of
+% Wisconsin. It uses the memoir document class. The page is set to 8.5
+% in by 11 in with one inch margins.
+%
+\ProvidesPackage{radhydro}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PAGE SIZE OPTIONS %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% DEFAULT OPTIONS, 1 INCH MARGINS %%%
+% Set the stock size:
+%   This is the size of the paper that goes in the printer.
+\setstocksize{11in}{8.5in}
+
+% Set the trimmed size: 
+%   This is the size that the paper from the printer is cut to for publication. 
+%   Since we don't cut the paper this is the same as the stock size.
+\settrimmedsize{11in}{8.5in}{*}
+
+% Set the type block size:
+%   This is the width of the text on the page. So the text block size plus the
+%   margins forms the trimmed size. Below, I'm setting up the page for one inch
+%   margins.
+\settypeblocksize{9in}{6.5in}{*}
+
+% Set the left/right margins:
+%   Once you set the left margin, the right is automatically computed using the
+%   type block size.
+\setlrmargins{1.0in}{*}{*}
+
+% Set the upper/lower margins:
+%  Once you set the upper margin, the bottom is automatically computed using the
+%  type block size.
+\setulmargins{1.0in}{*}{*}
+
+% The following command takes all of the options that were provided
+% about the page and sets all of the other options so that everything
+% is consistent.
+\checkandfixthelayout
+
+\newcommand{\marginsfourfourths}
+{
+ \settypeblocksize{9.0in}{6.5in}{*}
+ \setlrmargins{1.0in}{*}{*}
+ \setulmargins{1.0in}{*}{*}
+ \checkandfixthelayout
+}
+
+\newcommand{\marginsfivefourths}
+{
+ \settypeblocksize{8.5in}{6.0in}{*}
+ \setlrmargins{1.25in}{*}{*}
+ \setulmargins{1.25in}{*}{*}
+ \checkandfixthelayout
+}
+
+\newcommand{\marginssixfourths}
+{
+ \settypeblocksize{8.0in}{5.5in}{*}
+ \setlrmargins{1.50in}{*}{*}
+ \setulmargins{1.50in}{*}{*}
+ \checkandfixthelayout
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER/FOOTER/PAGE NUMBER OPTIONS %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Turns off headers and footers (including the page number!):
+% \pagestyle{empty}
+
+% Sets the page number to the center of the footer:
+% \pagestyle{plain}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PARAGRAPH OPTIONS %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Set the indentation for the first line of each paragraph:
+\setlength{\parindent}{0in}
+
+% Set the line space between paragraphs:
+%   Generally, if you set parindent to zero, you will want to set this to 
+%   \baselineskip to skip one line between paragraphs
+\setlength{\parskip}{\baselineskip}
+
+% Indents the first line after a chapter/section:
+% \usepackage{indentfirst}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% TITLEPAGE/TOC/ABSTRACT OPTIONS %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Set the table of contents depth:
+%   This will make sure that subsubsections will appear in the table of 
+%   contents.
+\settocdepth{paragraph}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%%% SECTION OPTIONS %%%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Set the numbering depth:
+%   This will tell latex to number subsubsections as well.
+\setsecnumdepth{paragraph}
+
+% Set section to highest numbering if article option set:
+\ifartopt
+  \renewcommand{\thesection}{\arabic{section}}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%
+%%% LIST OPTIONS %%%
+%%%%%%%%%%%%%%%%%%%%
+
+% Set the inter-element list spacing to the baselinestretch
+%\tightlists
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%%% LOGGING OPTIONS %%%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\logday}[3]
+{
+  \LARGE
+  \flushright \textbf{#1 #2, #3} \flushleft
+  \vspace{4pt}
+  \hrule
+  \normalsize
+}
+
+\newcommand{\topic}[1]
+{
+  \textbf{#1:} \\
+}
+
+\newcommand{\logmonth}[2]
+{
+  \chapter{#1 #2}
+}
+
+\newcommand{\logyear}[1]
+{
+  \part{#1}
+}

@@ -1,0 +1,70 @@
+% acrobat.tex
+%
+% This file explains how to generate Adobe Acrobat files
+%
+% Eric Benedict, July 2000
+%
+% It is provided without warranty on an AS IS basis.
+
+\newcommand{\pdf}{\mbox{\tt *.pdf}}
+
+\chapter{Adobe Acrobat (\pdf ) Files}
+The Adobe Acrobat file format has pretty much become the {\em de facto}
+standard for document sharing.  As such, some faculty members and/or
+departments may be requiring a final copy of the thesis in Acrobat format
+(\pdf ).
+
+There are several different methods of obtaining a \pdf\ file from a \LaTeX{}
+thesis; however, they are all very site specific.  A couple of different
+methods which have been found to work are mentioned as suggested ideas to try
+as a starting point.  Depending on what is installed at your site/location some
+of these may be applicable.
+
+\section{Converting from {\tt *.ps} to \pdf}
+One option to obtain the \pdf\ file would be to generate the thesis in a normal
+manner and then use the Acrobat\ {\tt Distiller}\ to convert the postscript file into a
+\pdf\ file.
+
+If the\ {\tt Distiller}\ program is available and convenient to use, then this is quite easy to do.
+
+Depending on the choice of document fonts, the results may not be satisfactory since
+some of the fonts may end up as bit-mapped fonts and will display poorly at any resolution
+other than what they were sampled on.  Also, since the\ {\tt Distiller}\ program is an expensive
+program to obtain, it is not always available.
+
+An alternative to the Adobe\ {\tt Distiller}\ program is the Alladin\ {\tt Ghostscript}\ program.  This is
+available for free from
+
+{\tt \verb|   http://www.cs.wisc.edu/~ghost/index.html|}
+
+This program is available for most common operating systems as a compiled binary, but the source code
+is available for other systems.  One drawback is that this conversion must be performed as a
+command line invocation and isn't very user friendly.  This may be addressed in a future version of\
+{\tt Ghostview}, the program which provides a nice user interface to\ {\tt Ghostscript}.
+
+\section{Converting from {\tt *.dvi} to \pdf}
+There are two programs available which will convert from {\tt *.dvi} to \pdf,\ {\tt dvipdf}\ and\
+{\tt dvipdfm}.  The\ {\tt dvipdfm}\ program  will be discussed here.  In version 0.12, it can generate
+bookmarks, thumbnails (with assistance from\ {\tt Ghostscript}), scaling and rotation, JPEG and
+PNG bitmaps and font encoding and re-encoding (to support fonts which aren't fully supported by
+the Acrobat suite).  When\ {\tt Ghostscript}\ is properly installed,\ {\tt dvipdfm}\ will automatically
+convert any encapsulated PostScript figures into the required \pdf{} format.  This program behaved in a
+similar manner to the {\tt dvips} program and was used to produce the \pdf{} format of this document.
+
+
+
+\section{Generating \pdf{} Initially}
+There are now some programs which are similar to \TeX{} but instead of producing a\ {\tt .dvi}\ output,
+they produce \pdf as a native output.  One such program, {\sc pdf}\TeX{} / {\sc pdf}\LaTeX{},
+is available from
+
+{\tt \verb|   http://www.tug.org/applications/pdftex|}
+
+Note that as of this date, July 2000, {\sc pdf}\TeX{} / {\sc pdf}\LaTeX{} while currently quite usable, it
+is still in a beta version.  Look at the web site for more current information.
+
+The present version was able to produce a \pdf{} file of this document without any required
+changes, except for the Postscript figure inclusion  (Figure~\ref{vwcontr}).  To properly include
+this figure, requires the conversion of the postscript figure into a \pdf{} figure.  The procedure
+is described in the manual for {\sc pdf}\TeX{} / {\sc pdf}\LaTeX{}.  Note that the figure conversion will
+require either\ {\tt Distiller}\ or\ {\tt Ghostscript}.

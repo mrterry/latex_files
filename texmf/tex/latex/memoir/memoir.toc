@@ -1,0 +1,204 @@
+\contentsline {section}{\numberline {1}Introduction}{7}
+\contentsline {section}{\numberline {2}A driver for this document}{8}
+\contentsline {section}{\numberline {3}Identification}{9}
+\contentsline {section}{\numberline {4}Initial Code}{9}
+\contentsline {subsection}{\numberline {4.1}Classes, Packages and Files}{13}
+\contentsline {subsection}{\numberline {4.2}For package documentation}{16}
+\contentsline {subsection}{\numberline {4.3}Checking the processor}{17}
+\contentsline {subsection}{\numberline {4.4}Extending an existing macro}{20}
+\contentsline {subsection}{\numberline {4.5}Support for the bidi package (RTL typesetting)}{25}
+\contentsline {section}{\numberline {5}Declaration of Options}{26}
+\contentsline {subsection}{\numberline {5.1}Setting Paper Sizes}{26}
+\contentsline {subsection}{\numberline {5.2}Choosing the type size}{30}
+\contentsline {subsection}{\numberline {5.3}Two-side or one-side printing}{30}
+\contentsline {subsection}{\numberline {5.4}Two column printing}{31}
+\contentsline {subsection}{\numberline {5.5}The \textsf {draft} option}{31}
+\contentsline {subsection}{\numberline {5.6}The \textsf {ms} option}{31}
+\contentsline {subsection}{\numberline {5.7}The \textsf {showtrims} option}{32}
+\contentsline {subsection}{\numberline {5.8}The \textsf {article} option}{32}
+\contentsline {subsection}{\numberline {5.9}The \textsf {subfigure} option}{32}
+\contentsline {subsection}{\numberline {5.10}The openright, openleft and openany options}{32}
+\contentsline {subsection}{\numberline {5.11}Equation numbering on the left}{33}
+\contentsline {subsection}{\numberline {5.12}Flush left math displays}{33}
+\contentsline {subsection}{\numberline {5.13}Open bibliography}{33}
+\contentsline {subsection}{\numberline {5.14}Old font commands}{33}
+\contentsline {subsection}{\numberline {5.15}Extra font sizes}{33}
+\contentsline {subsection}{\numberline {5.16}ETeX}{33}
+\contentsline {section}{\numberline {6}Executing Options}{34}
+\contentsline {section}{\numberline {7}Fonts and spaces}{36}
+\contentsline {subsection}{\numberline {7.1}Fonts}{36}
+\contentsline {subsection}{\numberline {7.2}Paragraphing}{48}
+\contentsline {subsection}{\numberline {7.3}Vertical spacing}{50}
+\contentsline {subsection}{\numberline {7.4}Footnotes}{52}
+\contentsline {subsection}{\numberline {7.5}Floats}{53}
+\contentsline {paragraph}{Floats on a text page}{53}
+\contentsline {paragraph}{Floats on their own page or column}{56}
+\contentsline {subsection}{\numberline {7.6}The measure}{58}
+\contentsline {section}{\numberline {8}Page Layout}{60}
+\contentsline {subsection}{\numberline {8.1}The typeblock and margins}{60}
+\contentsline {subsection}{\numberline {8.2}Some predefined layouts}{76}
+\contentsline {subsection}{\numberline {8.3}Float placement parameters}{78}
+\contentsline {paragraph}{Limits for the placement of floating objects}{78}
+\contentsline {section}{\numberline {9}Page Styles}{79}
+\contentsline {subsection}{\numberline {9.1}Marking conventions}{79}
+\contentsline {subsection}{\numberline {9.2}Defining the page styles}{80}
+\contentsline {subsection}{\numberline {9.3}Page numbering}{97}
+\contentsline {section}{\numberline {10}Non-traditional spacing}{98}
+\contentsline {subsection}{\numberline {10.1}Double spacing}{98}
+\contentsline {subsection}{\numberline {10.2}Abnormal parskips}{102}
+\contentsline {section}{\numberline {11}Titles}{103}
+\contentsline {section}{\numberline {12}Parts, chapters and other divisions}{109}
+\contentsline {subsection}{\numberline {12.1}Building blocks}{109}
+\contentsline {subsection}{\numberline {12.2}Mark commands}{110}
+\contentsline {subsection}{\numberline {12.3}Define Counters}{111}
+\contentsline {subsection}{\numberline {12.4}Front, main and back matter}{112}
+\contentsline {subsection}{\numberline {12.5}Book}{114}
+\contentsline {subsection}{\numberline {12.6}Part}{117}
+\contentsline {subsection}{\numberline {12.7}Chapter}{120}
+\contentsline {subsubsection}{\numberline {12.7.1}Chapter styling}{124}
+\contentsline {subsection}{\numberline {12.8}Lower level headings}{135}
+\contentsline {subsubsection}{\numberline {12.8.1}Anonymous headings}{142}
+\contentsline {subsection}{\numberline {12.9}Division head styles}{146}
+\contentsline {subsection}{\numberline {12.10}Appendices}{153}
+\contentsline {subsection}{\numberline {12.11}Appendixpage-like pages}{156}
+\contentsline {subsection}{\numberline {12.12}Paragraphs}{158}
+\contentsline {subsubsection}{\numberline {12.12.1}Normal (block) paragraphs}{158}
+\contentsline {subsubsection}{\numberline {12.12.2}Centered lines}{159}
+\contentsline {subsubsection}{\numberline {12.12.3}Ragged}{160}
+\contentsline {subsubsection}{\numberline {12.12.4}Hanging}{161}
+\contentsline {subsubsection}{\numberline {12.12.5}Miscellaneous}{161}
+\contentsline {section}{\numberline {13}Lists}{162}
+\contentsline {subsection}{\numberline {13.1}General List Parameters}{162}
+\contentsline {subsection}{\numberline {13.2}Enumerate}{168}
+\contentsline {subsection}{\numberline {13.3}Itemize}{171}
+\contentsline {subsection}{\numberline {13.4}Description}{172}
+\contentsline {subsection}{\numberline {13.5}Quotation}{173}
+\contentsline {subsection}{\numberline {13.6}Quote}{173}
+\contentsline {subsection}{\numberline {13.7}Theorem}{173}
+\contentsline {subsection}{\numberline {13.8}Listing of symbols and abbreviations}{174}
+\contentsline {section}{\numberline {14}Abstracts}{174}
+\contentsline {section}{\numberline {15}Verse}{178}
+\contentsline {subsection}{\numberline {15.1}Environments}{178}
+\contentsline {subsection}{\numberline {15.2}Patterns}{183}
+\contentsline {subsection}{\numberline {15.3}Titles}{187}
+\contentsline {section}{\numberline {16}Setting parameters for existing environments}{191}
+\contentsline {subsection}{\numberline {16.1}Array and tabular}{191}
+\contentsline {subsection}{\numberline {16.2}Tabbing}{192}
+\contentsline {subsection}{\numberline {16.3}Minipage}{192}
+\contentsline {subsection}{\numberline {16.4}Framed boxes}{192}
+\contentsline {subsection}{\numberline {16.5}Equation and eqnarray}{192}
+\contentsline {section}{\numberline {17}Array and tabular}{193}
+\contentsline {subsection}{\numberline {17.1}Array}{193}
+\contentsline {subsubsection}{\numberline {17.1.1}The construction of the preamble}{193}
+\contentsline {subsubsection}{\numberline {17.1.2}Building and calling \texttt {\textbackslash halign}}{205}
+\contentsline {subsubsection}{\numberline {17.1.3}The line separator \texttt {\textbackslash \textbackslash }}{207}
+\contentsline {subsubsection}{\numberline {17.1.4}Spanning several columns}{208}
+\contentsline {subsubsection}{\numberline {17.1.5}The environment definitions}{208}
+\contentsline {subsubsection}{\numberline {17.1.6}Defining your own column specifiers}{210}
+\contentsline {subsubsection}{\numberline {17.1.7}The *--form}{212}
+\contentsline {subsection}{\numberline {17.2}Getting the spacing around rules right}{213}
+\contentsline {subsection}{\numberline {17.3}D column specifiers}{215}
+\contentsline {subsection}{\numberline {17.4}Support for delimeters}{217}
+\contentsline {subsection}{\numberline {17.5}The tabularx environment}{219}
+\contentsline {subsection}{\numberline {17.6}Fear's rules}{227}
+\contentsline {subsubsection}{\numberline {17.6.1}Full width rules}{229}
+\contentsline {subsubsection}{\numberline {17.6.2}Special subrules}{231}
+\contentsline {subsection}{\numberline {17.7}Input files into tabulars, and etex}{234}
+\contentsline {subsection}{\numberline {17.8}Continuous tabulars}{235}
+\contentsline {subsubsection}{\numberline {17.8.1}Horizontal lines}{237}
+\contentsline {subsection}{\numberline {17.9}Automated tabulations}{238}
+\contentsline {section}{\numberline {18}Floating objects}{243}
+\contentsline {subsection}{\numberline {18.1}Floats}{244}
+\contentsline {subsection}{\numberline {18.2}Captions}{247}
+\contentsline {subsubsection}{\numberline {18.2.1}Continuation captions and legends}{251}
+\contentsline {subsubsection}{\numberline {18.2.2}Non-float captions}{253}
+\contentsline {subsubsection}{\numberline {18.2.3}Bilingual captions}{253}
+\contentsline {subsubsection}{\numberline {18.2.4}Support for the \textsf {subfigure} package functionality}{256}
+\contentsline {subsubsection}{\numberline {18.2.5}Side captions}{264}
+\contentsline {section}{\numberline {19}Epigraphs}{273}
+\contentsline {subsection}{\numberline {19.1}Epigraphs before a chapter title}{275}
+\contentsline {section}{\numberline {20}The deprecated font commands}{277}
+\contentsline {section}{\numberline {21}Cross Referencing}{279}
+\contentsline {subsection}{\numberline {21.1}Label referencing}{279}
+\contentsline {subsection}{\numberline {21.2}Title referencing}{280}
+\contentsline {section}{\numberline {22}Table of Contents, etc.}{282}
+\contentsline {subsection}{\numberline {22.1}New List of \dots }{283}
+\contentsline {subsection}{\numberline {22.2}Table of Contents}{286}
+\contentsline {subsection}{\numberline {22.3}List entries}{287}
+\contentsline {subsection}{\numberline {22.4}Support for the \textsf {subfigure} package}{297}
+\contentsline {subsection}{\numberline {22.5}Switching page numbering}{297}
+\contentsline {subsection}{\numberline {22.6}Chapter precis}{298}
+\contentsline {subsection}{\numberline {22.7}Adding things to the ToC}{299}
+\contentsline {subsection}{\numberline {22.8}ToC and divisional numbering}{300}
+\contentsline {section}{\numberline {23}Bibliography}{304}
+\contentsline {subsection}{\numberline {23.1}Use with the \textsf {natbib} and \textsf {chapterbib} packages}{306}
+\contentsline {section}{\numberline {24}The index}{307}
+\contentsline {section}{\numberline {25}Page bottom}{314}
+\contentsline {subsection}{\numberline {25.1}Widows and sloppybottom}{315}
+\contentsline {section}{\numberline {26}Glossaries}{315}
+\contentsline {section}{\numberline {27}Notes/Marginalia}{320}
+\contentsline {subsection}{\numberline {27.1}A simple interface for specifying locations}{320}
+\contentsline {subsection}{\numberline {27.2}Marginpars}{322}
+\contentsline {subsubsection}{\numberline {27.2.1}Marginpar -- margin interface}{323}
+\contentsline {subsection}{\numberline {27.3}A fixed marginpar}{324}
+\contentsline {subsection}{\numberline {27.4}Sidebars}{327}
+\contentsline {subsection}{\numberline {27.5}Footnotes}{333}
+\contentsline {subsection}{\numberline {27.6}Major extensions for footnotes}{341}
+\contentsline {subsubsection}{\numberline {27.6.1}Two column footnotes}{350}
+\contentsline {subsubsection}{\numberline {27.6.2}Three column footnotes}{352}
+\contentsline {subsubsection}{\numberline {27.6.3}Paragraphed footnotes}{355}
+\contentsline {subsection}{\numberline {27.7}Nasty insert bits}{359}
+\contentsline {subsection}{\numberline {27.8}Side footnotes}{363}
+\contentsline {subsubsection}{\numberline {27.8.1}Extension to the regular footnote}{363}
+\contentsline {subsection}{\numberline {27.9}Bottom aligned side footnotes}{364}
+\contentsline {subsubsection}{\numberline {27.9.1}The sidefootnote macros}{368}
+\contentsline {subsection}{\numberline {27.10}End notes}{372}
+\contentsline {section}{\numberline {28}Change marks}{376}
+\contentsline {subsection}{\numberline {28.1}Print control}{376}
+\contentsline {subsection}{\numberline {28.2}Change marking}{377}
+\contentsline {section}{\numberline {29}Trimming marks}{377}
+\contentsline {subsection}{\numberline {29.1}Quark marks}{382}
+\contentsline {section}{\numberline {30}Verbatims, boxes, and files}{384}
+\contentsline {subsection}{\numberline {30.1}Modified version of the verbatim package}{384}
+\contentsline {subsubsection}{\numberline {30.1.1}Preliminaries}{385}
+\contentsline {subsubsection}{\numberline {30.1.2}The \texttt {verbatim} and \texttt {verbatim*} environments}{388}
+\contentsline {subsubsection}{\numberline {30.1.3}The \texttt {comment} environment}{390}
+\contentsline {subsubsection}{\numberline {30.1.4}The main loop}{392}
+\contentsline {subsubsection}{\numberline {30.1.5}The \cs {verbatiminput} command}{399}
+\contentsline {subsection}{\numberline {30.2}Writing and boxing verbatim}{401}
+\contentsline {subsection}{\numberline {30.3}The shortvrb package}{402}
+\contentsline {subsection}{\numberline {30.4}General verbatim boxing and line numbering}{404}
+\contentsline {subsection}{\numberline {30.5}The framed package}{410}
+\contentsline {subsection}{\numberline {30.6}The newfile package}{420}
+\contentsline {section}{\numberline {31}Utilities}{425}
+\contentsline {subsection}{\numberline {31.1}Extra `provide' commands}{425}
+\contentsline {subsection}{\numberline {31.2}Changing counters}{427}
+\contentsline {subsection}{\numberline {31.3}Odd/even page checking}{429}
+\contentsline {subsection}{\numberline {31.4}Checking for empty arguments}{430}
+\contentsline {subsection}{\numberline {31.5}Changing the page layout in the document}{431}
+\contentsline {subsection}{\numberline {31.6}Temporarily changing the text width}{432}
+\contentsline {subsection}{\numberline {31.7}Centering text}{433}
+\contentsline {subsection}{\numberline {31.8}Moving from the current page}{433}
+\contentsline {subsection}{\numberline {31.9}Needing space at the bottom of a page}{434}
+\contentsline {subsection}{\numberline {31.10}Overlong lines}{435}
+\contentsline {subsection}{\numberline {31.11}Text spacing commands}{436}
+\contentsline {subsection}{\numberline {31.12}Fractions and subscripts}{436}
+\contentsline {subsection}{\numberline {31.13}Numbers to names}{436}
+\contentsline {subsection}{\numberline {31.14}A fix for two column headings}{449}
+\contentsline {subsection}{\numberline {31.15}Time of day}{451}
+\contentsline {subsection}{\numberline {31.16}Sequential sheet (page) numbers}{452}
+\contentsline {subsection}{\numberline {31.17}Leaves per gathering}{453}
+\contentsline {section}{\numberline {32}Initialization}{454}
+\contentsline {subsection}{\numberline {32.1}Words and phrases}{454}
+\contentsline {subsection}{\numberline {32.2}Date}{455}
+\contentsline {subsection}{\numberline {32.3}Two column mode}{455}
+\contentsline {subsection}{\numberline {32.4}The page style and counters}{455}
+\contentsline {subsection}{\numberline {32.5}Single or double sided printing}{456}
+\contentsline {subsection}{\numberline {32.6}Floats}{456}
+\contentsline {subsection}{\numberline {32.7}The \textsf {article} option}{457}
+\contentsline {subsection}{\numberline {32.8}The \textsf {ms} option}{458}
+\contentsline {subsection}{\numberline {32.9}Emulated packages}{458}
+\contentsline {subsection}{\numberline {32.10}Interaction with the \textsf {caption} package}{459}
+\contentsline {subsection}{\numberline {32.11}Interaction with the \textsf {float} package}{461}
+\contentsline {subsection}{\numberline {32.12}Patch file}{461}
+\contentsline {section}{\numberline {33}Glossary Makeindex style file}{461}
